@@ -1,0 +1,54 @@
+---
+// Floating glass "snapshot" cards for the gallery hero (parallax on pointer move)
+import { skills } from '../data/skills';
+---
+<div class="relative w-full h-[340px] sm:h-[400px] lg:h-[460px] select-none" aria-hidden="true">
+  <!-- Back card: a sample "output" snapshot -->
+  <div data-parallax data-depth="14" data-rot="-5"
+       class="absolute left-0 sm:left-4 top-6 w-[300px] sm:w-[360px] animate-float-slow will-change-transform">
+    <div class="glass p-5">
+      <div class="mono-label text-gem-purple-light/90 mb-4 flex items-center gap-2">
+        <span>▸</span> Output · Brand Profile
+      </div>
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-11 h-11 rounded-full flex items-center justify-center bg-gem-purple/40 border border-gem-purple-light/40 font-display text-deep-beige text-sm">ES</div>
+        <div>
+          <div class="text-deep-beige font-semibold leading-tight">Edelstein</div>
+          <div class="text-deep-beige/45 text-xs">Editorial · Premium</div>
+        </div>
+      </div>
+      <div class="grid grid-cols-3 gap-2 mb-4">
+        <div class="h-8 border border-white/10" style="background:#1A2E25"></div>
+        <div class="h-8 border border-white/10" style="background:#F2F0E9"></div>
+        <div class="h-8 border border-white/10" style="background:#5B2C6F"></div>
+      </div>
+      <div class="space-y-2">
+        <div class="h-1.5 w-full bg-white/8"></div>
+        <div class="h-1.5 w-4/5 bg-white/8"></div>
+        <div class="h-1.5 w-2/3 bg-white/8"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Front card: installed skills, all ready -->
+  <div data-parallax data-depth="26" data-rot="4"
+       class="absolute right-0 sm:right-6 bottom-2 w-[290px] sm:w-[340px] animate-float will-change-transform">
+    <div class="glass-strong p-5">
+      <div class="flex items-center justify-between mb-4">
+        <span class="mono-label text-deep-beige/55">Installed · 3 Skills</span>
+        <span class="inline-block w-1.5 h-1.5 rounded-full bg-gem-purple-light dot-glow text-gem-purple-light"></span>
+      </div>
+      <ul class="space-y-3.5">
+        {skills.map((s) => (
+          <li class="flex items-center justify-between gap-3">
+            <span class="flex items-center gap-2.5 min-w-0">
+              <span class="inline-block w-1.5 h-1.5 rounded-full bg-gem-purple-light/90 shrink-0"></span>
+              <span class="font-mono text-[0.8rem] text-deep-beige/90 truncate">{s.slug}</span>
+            </span>
+            <span class="mono-label text-gem-purple-light/80 shrink-0">Ready</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</div>

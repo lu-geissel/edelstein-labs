@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Edelstein Icon - Ethereum Style -->
+
+  <!-- Obere Hälfte - linke Seite (dunkel) -->
+  <polygon points="16,2 16,15 6,13" fill="#4A2459"/>
+
+  <!-- Obere Hälfte - rechte Seite (hell) -->
+  <polygon points="16,2 16,15 26,13" fill="#7B3D8F"/>
+
+  <!-- Mittlere Trennlinie - links -->
+  <polygon points="6,13 16,15 16,17 6,15" fill="#5B2C6F" opacity="0.5"/>
+
+  <!-- Mittlere Trennlinie - rechts -->
+  <polygon points="26,13 16,15 16,17 26,15" fill="#9B59B6" opacity="0.5"/>
+
+  <!-- Untere Hälfte - linke Seite (dunkel) -->
+  <polygon points="16,30 16,17 6,15" fill="#3D1F4A"/>
+
+  <!-- Untere Hälfte - rechte Seite (mittel) -->
+  <polygon points="16,30 16,17 26,15" fill="#5B2C6F"/>
+</svg>

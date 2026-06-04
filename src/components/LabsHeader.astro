@@ -1,0 +1,47 @@
+---
+import { MAIN_SITE, GITHUB_REPO_URL } from '../data/skills';
+---
+<header
+  id="labs-header"
+  class="fixed top-0 inset-x-0 z-50 transition-colors duration-300 border-b border-transparent"
+>
+  <div class="max-w-6xl mx-auto px-5 md:px-8 py-4 md:py-5 flex items-center justify-between gap-4">
+    <!-- Wordmark / Logo -->
+    <a href="/" class="group flex items-center gap-3 shrink-0">
+      <span class="font-signature text-4xl md:text-[2.6rem] leading-none text-gem-purple-light group-hover:text-deep-beige transition-colors">Edelstein</span>
+      <span class="mono-label text-deep-beige/70 border border-deep-beige/25 px-1.5 py-0.5 leading-none">
+        LABS
+      </span>
+    </a>
+
+    <!-- Nav -->
+    <nav class="flex items-center gap-5 md:gap-7">
+      <a href="/#skills" class="hidden sm:inline mono-label text-deep-beige/70 hover:text-deep-beige transition-colors ul-anim">
+        Skills
+      </a>
+      <a href={GITHUB_REPO_URL} target="_blank" rel="noopener noreferrer"
+         class="hidden sm:inline mono-label text-deep-beige/70 hover:text-deep-beige transition-colors ul-anim">
+        GitHub
+      </a>
+      <a href={MAIN_SITE}
+         class="group inline-flex items-center gap-1.5 mono-label text-deep-beige border border-deep-beige/25 hover:border-gem-purple-light/70 px-3 py-2 transition-colors">
+        Edelstein
+        <span aria-hidden="true" class="text-gem-purple-light transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5">↗</span>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const h = document.getElementById('labs-header');
+  const onScroll = () => {
+    if (!h) return;
+    if (window.scrollY > 24) {
+      h.classList.add('glass', 'border-b', 'border-[color:var(--color-labs-line)]');
+    } else {
+      h.classList.remove('glass', 'border-b', 'border-[color:var(--color-labs-line)]');
+    }
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+</script>

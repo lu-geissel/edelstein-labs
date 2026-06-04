@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+/* ===== Edelstein Labs — Theme ===== */
+@theme {
+  /* Brand Colors (CI — unchanged) */
+  --color-deep-beige: #F2F0E9;
+  --color-paper: #F9F8F4;
+  --color-jungle-green: #1A2E25;
+  --color-gem-purple: #5B2C6F;
+  --color-gem-purple-light: #9B59B6;
+  --color-stone-dark: #292524;
+
+  /* Labs dark shades (darker tints of jungle-green — not a new hue) */
+  --color-labs-bg: #0A120E;
+  --color-labs-bg2: #0E1A14;
+  --color-labs-panel: #14241C;
+  --color-labs-line: rgba(242, 240, 233, 0.12);
+  --color-labs-green: #34D399;
+
+  /* Fonts */
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  --font-display: 'Cinzel', serif;
+  --font-signature: 'Mrs Saint Delafield', cursive;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+}
+
+/* ===== Base ===== */
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-labs-bg);
+}
+
+body {
+  background-color: var(--color-labs-bg);
+  color: var(--color-deep-beige);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-gem-purple);
+  color: #fff;
+}
+
+/* Custom scrollbar (subtle, on-brand) */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--color-labs-bg); }
+::-webkit-scrollbar-thumb {
+  background: rgba(155, 89, 182, 0.35);
+  border-radius: 0;
+  border: 2px solid var(--color-labs-bg);
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(155, 89, 182, 0.55); }
