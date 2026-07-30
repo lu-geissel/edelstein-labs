@@ -60,6 +60,13 @@ const cmdUnzip =
           </li>
         ))}
       </ul>
+      {skill.note && (
+        <div class="mt-7 border-l-2 border-gem-purple-light/70 bg-gem-purple/12 pl-5 pr-4 py-4">
+          <p class="mono-label text-gem-purple-light mb-2">Wichtig</p>
+          <p class="text-deep-beige/75 leading-relaxed">{skill.note}</p>
+        </div>
+      )}
+
       <div class="flex flex-col sm:flex-row gap-4 mt-9">
         <a href={skill.downloadUrl} download
            class="inline-flex items-center justify-center gap-2 mono-label text-deep-beige bg-gem-purple hover:bg-gem-purple-light transition-colors px-7 py-4">

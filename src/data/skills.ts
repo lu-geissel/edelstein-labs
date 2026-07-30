@@ -67,6 +67,8 @@ export interface Skill {
   bullets: string[];
   status: 'stable' | 'beta';
   tag: string;
+  /* Optional: hervorgehobener Hinweis unter den Bullets auf der Detailseite */
+  note?: string;
   downloadUrl: string;
   /* Optional: further .skill files belonging to the same plugin */
   extraDownloads?: SkillDownload[];
@@ -220,13 +222,14 @@ Substanz eine tragfähige Botschaft macht.`,
   {
     slug: 'voiceprint',
     name: 'Voiceprint',
-    tagline: 'Deine Schreibstimme als Datei – statt als Prompt, den du jedes Mal neu tippst.',
+    tagline: 'Schreib mit AI in deiner eigenen Stimme – erkennbar, in jedem Chat.',
     subheading:
-      'Aus 3 bis 20 echten Texten wird ein VOICE.md, das jede AI vor dem Schreiben liest.',
+      'Aus deinen echten Texten wird ein VOICE.md. Jede AI liest es vor dem Schreiben und klingt danach nach dir.',
     bullets: [
-      'Analysiert Rhythmus, Wortschatz, Eigenheiten und deine No-Gos – mit Belegzitat',
-      'Selbsttest eingebaut: schreibt eine Probe und vergleicht sie gegen deine Originale',
-      'Anti-Slop-Liste: die AI-Floskeln, die in keinem Text auftauchen dürfen',
+      'Deine Texte klingen nach dir – erkennbar, in jedem Chat und in jedem Tool',
+      'Schluss mit AI-Slop: die verräterischen Floskeln stehen auf einer Bannliste',
+      'Einmal erstellt, überall gelesen – du erklärst deinen Stil nie wieder im Prompt',
+      'Wird mit jeder Korrektur besser, statt bei jedem neuen Chat bei null anzufangen',
     ],
     status: 'stable',
     tag: 'Voice',
@@ -245,15 +248,15 @@ Humor, null Konzern-Polster.
 ## Klingt falsch (plausibel für eine AI, fremd für dich)
 - "Lass uns tief eintauchen."`,
     problem:
-      'AI-Texte klingen nach AI. Man erkennt es an denselben Floskeln, demselben Rhythmus, denselben Dreiklängen. Und man tippt in jedem Chat aufs Neue "schreib in meinem Stil" – ohne je gesagt zu haben, was das eigentlich heißt.',
+      'AI-Texte klingen nach AI. Immer dieselben Floskeln, derselbe Rhythmus, dieselben Dreiklänge – Leser merken das inzwischen. Und du tippst in jedem neuen Chat aufs Neue "schreib in meinem Stil", ohne je gesagt zu haben, was das eigentlich heißt. Das Ergebnis: Texte, die du vor dem Absenden ohnehin umschreibst.',
     howItWorks: [
       { title: 'Installieren', body: 'Skill herunterladen und in deinem AI-Assistenten einbinden (siehe unten).' },
-      { title: 'Texte geben', body: 'Mindestens 3, ideal 10+ Texte, die du selbst geschrieben hast – Mails, Posts, Angebote. Gemischte Formate sind besser als ein einziges.' },
-      { title: 'VOICE.md erhalten', body: 'Ein Profil mit Belegzitaten, plus eine Schreibprobe, die neben deinen Originalen steht. Deine Korrekturen wandern zurück ins Profil.' },
+      { title: 'Texte geben', body: 'Mindestens 3, ideal 10+ Texte, die du selbst geschrieben hast – Mails, Posts, Angebote. Gemischte Formate sind besser als ein einziges. Der Skill analysiert Rhythmus, Wortschatz, Eigenheiten und deine No-Gos, jeweils mit Belegzitat aus deinem Material.' },
+      { title: 'VOICE.md bekommen und benutzen', body: 'Der Skill schreibt eine Probe in deiner Stimme und stellt sie neben deine Originale – du siehst sofort, ob es sitzt. Danach liegt das Profil als eine Datei in deinem Projekt: Jede AI, die sie liest, schreibt ab da wie du.' },
     ],
     whyBuilt:
-      'Ich schreibe für mehrere Marken plus mich selbst. Prompt-Imitation driftet – ein geschriebenes Profil nicht. Es ist überprüfbar, versionierbar und wird mit jeder Korrektur besser, statt bei jedem neuen Chat bei null anzufangen.',
-    builtFor: ['Jedes LLM – Claude, ChatGPT, Gemini & Co.', 'Eine einzige Datei, die überall gelesen wird', 'Greift direkt in die LinkedIn Pipeline'],
+      'Ich schreibe für mehrere Marken plus mich selbst. Prompt-Imitation driftet – ein geschriebenes Profil nicht. Es ist überprüfbar, versionierbar, und jede Korrektur, die du machst, wandert zurück hinein. Nach drei Runden schreibt die AI Entwürfe, an denen du nichts mehr glattziehst.',
+    builtFor: ['Jedes LLM – Claude, ChatGPT, Gemini & Co.', 'Eine einzige Datei, die überall gelesen wird', 'Greift direkt in LinkedIn Content Creation'],
     triggers: ['voice profile', 'schreibstil', 'klingt nach mir', 'tone of voice', 'anti-slop'],
     preview: {
       kind: 'voice-profile',
@@ -264,21 +267,22 @@ Humor, null Konzern-Polster.
     },
   },
   {
-    slug: 'linkedin-pipeline',
-    name: 'LinkedIn Pipeline',
-    tagline: 'Von der Sprachnotiz zum fertigen Post – mit zwei Stopps, an denen du entscheidest.',
+    slug: 'linkedin-content-creation',
+    name: 'LinkedIn Content Creation',
+    tagline: 'Die Sprachnotiz von heute Morgen wird ein Post, den du unterschreiben kannst.',
     subheading:
-      'Ingest → Angle → Freigabe → Draft → Freigabe. Hook zuerst, Faktencheck-Pflicht, Edit-Pass mit frischem Blick.',
+      'Erst der Winkel, dann der Text – und dazwischen entscheidest du. Hook zuerst, jede Zahl markiert, Edit-Pass mit frischem Blick.',
     bullets: [
-      'Transkribiert Sprachnotizen und Videos lokal und destilliert einen Winkel daraus',
-      'Zwei harte Freigabe-Gates: nichts läuft ohne dein Wort durch',
-      'Jede Zahl im Draft bekommt einen Faktencheck-Marker – keine erfundenen Belege',
+      'Dein Rohmaterial wird verwertet, statt liegen zu bleiben: Sprachnotiz, Video, PDF, Link',
+      'Du entscheidest zweimal – nichts läuft ohne dein Wort durch bis zum fertigen Text',
+      'Keine erfundenen Belege: jede Zahl im Draft trägt einen Faktencheck-Marker',
+      'Kein Recycling deiner eigenen Formulierungen – jeder Post bekommt eigene Textur',
     ],
     status: 'stable',
     tag: 'Content',
     downloadUrl: '/skills/linkedin-post.skill',
     extraDownloads: [{ label: 'linkedin-draft.skill', url: '/skills/linkedin-draft.skill' }],
-    githubUrl: `${GITHUB_REPO_URL}/tree/main/linkedin-pipeline`,
+    githubUrl: `${GITHUB_REPO_URL}/tree/main/linkedin-content-creation`,
     sampleOutput: `HOOKS (6 Kandidaten, ★ = Empfehlung)
 
 ★ 2 · [Zahl] "Drei Wochen Ausschreibung. Und dann
@@ -288,11 +292,11 @@ Humor, null Konzern-Polster.
 
 [FAKTENCHECK: 3 Wochen – mit Klient bestätigen]`,
     problem:
-      'Der Rohstoff für gute Posts liegt in Sprachnotizen, Calls und PDFs. Was daraus wird, ist meistens entweder generisch oder eine Woche zu spät. Und wenn die AI durchläuft, steht am Ende ein Text, den so niemand freigegeben hat.',
+      'Der Rohstoff für gute Posts liegt längst da: in Sprachnotizen, Calls, PDFs. Was daraus wird, ist meistens generisch oder eine Woche zu spät. Und lässt man die AI einfach durchlaufen, steht am Ende ein Text, den so niemand freigegeben hätte – mit Zahlen, die niemand geprüft hat.',
     howItWorks: [
-      { title: 'Installieren', body: 'Skill herunterladen und in deinem AI-Assistenten einbinden. Enthält zwei Skills: die Pipeline und die Schreib-Engine.' },
-      { title: 'Material reinwerfen', body: 'Sprachnotiz, Video, PDF, Link oder eine grobe Idee. Beim ersten Lauf richtet der Skill deinen linkedin/-Ordner mit dir gemeinsam ein.' },
-      { title: 'Zweimal entscheiden', body: 'Erst der Winkel, dann der Draft. An beiden Stellen stoppt der Skill und wartet – du schärfst nach oder gibst frei.' },
+      { title: 'Installieren', body: 'Skill herunterladen und in deinem AI-Assistenten einbinden. Enthält zwei Skills: den Ablauf und die Schreib-Engine.' },
+      { title: 'Material reinwerfen', body: 'Sprachnotiz, Video, PDF, Link oder eine grobe Idee. Audio wird lokal transkribiert. Beim ersten Lauf richtet der Skill deinen linkedin/-Ordner gemeinsam mit dir ein.' },
+      { title: 'Zweimal entscheiden', body: 'Erst der Winkel, dann der Draft. An beiden Stellen stoppt der Skill und wartet auf dein Wort – du schärfst nach oder gibst frei. Deine Endfassung wird als eigene Version abgelegt: der Unterschied zwischen Entwurf und Endtext ist das, woraus der nächste Post lernt.' },
     ],
     whyBuilt:
       'Ich schreibe Posts für Klienten und für mich. Das Problem war nie das Schreiben, sondern der Winkel und die Disziplin: nicht recyceln, nichts behaupten, was keiner geprüft hat, und den Draft nicht überschreiben – weil die Differenz zwischen Entwurf und Endfassung das Einzige ist, woraus das System lernt.',
@@ -314,15 +318,16 @@ Humor, null Konzern-Polster.
   {
     slug: 'jour-fixe',
     name: 'Jour Fixe',
-    tagline: 'Das wöchentliche Status-Meeting, vorbereitet – inklusive der unbequemen Frage.',
+    tagline: 'Die Stunde Meeting-Vorbereitung, die jede Woche wiederkommt – erledigt, bevor du dich hinsetzt.',
     subheading:
-      'Quellen ziehen, Vorwoche gegen Ist abgleichen, Slides abstimmen, nach Freigabe das Deck erzeugen.',
+      'Zieht deine Quellen, gleicht die Vorwoche gegen das Ist ab und baut das Deck – erst nach deiner Freigabe.',
     bullets: [
-      'Gleicht ab, was letzte Woche versprochen war, gegen das, was tatsächlich passiert ist',
-      'Deine eigenen Quellen: Zeiterfassung, letztes Deck, Task-Board, mündliche Updates',
-      'Output frei wählbar: Gamma-Deck, Markdown, Slide-Text oder Dokument',
+      'Du gehst vorbereitet rein: kein Zusammensuchen von Stunden, Tasks und letztem Deck mehr',
+      'Findet die Lücke vor dem Termin – jede Priorität ohne Fortschritt wird dir vorher zur Frage gestellt',
+      'Läuft mit deinen eigenen Quellen: Zeiterfassung, letztes Deck, Task-Board, mündliche Updates',
+      'Deck in deinem Format: Gamma, Markdown, Slide-Text oder Dokument',
     ],
-    status: 'beta',
+    status: 'stable',
     tag: 'Ops',
     downloadUrl: '/skills/jour-fixe.skill',
     githubUrl: `${GITHUB_REPO_URL}/tree/main/jour-fixe`,
@@ -336,7 +341,7 @@ Humor, null Konzern-Polster.
   → "Letzte Woche als Priorität gesetzt. Update,
      oder diese Woche nicht erwähnen?"`,
     problem:
-      'Das wiederkehrende Meeting frisst jede Woche dieselbe Stunde: Quellen zusammensuchen, sich erinnern, was letzte Woche versprochen war, Slides bauen. Und genau der Punkt, zu dem es nichts zu sagen gibt, fällt einem erst im Termin auf.',
+      'Das wiederkehrende Meeting frisst jede Woche dieselbe Stunde: Quellen zusammensuchen, sich erinnern, was letzte Woche versprochen war, Slides bauen. Und der eine Punkt, zu dem es nichts zu berichten gibt, fällt dir erst im Termin auf – vor dem Kunden.',
     howItWorks: [
       { title: 'Installieren', body: 'Skill herunterladen und in deinem AI-Assistenten einbinden.' },
       { title: 'Quellen eintragen', body: 'Beim ersten Lauf fragt der Skill deine Quellen ab – Zeiterfassung, letztes Deck, Task-Board – und legt daraus eine Config an. Danach liest er sie jede Woche selbst.' },
@@ -359,16 +364,17 @@ Humor, null Konzern-Polster.
   {
     slug: 'session-handoff',
     name: 'Session Handoff',
-    tagline: 'Die nächste Session macht weiter, wo du aufgehört hast.',
+    tagline: 'Gib deiner AI ein Gedächtnis: Was passiert ist, wo du stehst, warum du es so entschieden hast.',
     subheading:
-      'status.md als Dashboard statt Tagebuch – Erledigtes fließt ins Log, Entscheidungen nur mit deinem OK.',
+      'Ab jetzt wird mitgeschrieben. Jede Session endet mit einem Stand, den die nächste liest – über /clear, Modellwechsel und Wochen Pause hinweg.',
     bullets: [
-      'Drei Dateien, die sich nie überschneiden: Stand, Historie, Entscheidungen',
-      'Hartes Limit: status.md passt auf eine Bildschirmseite, sonst muss etwas raus',
-      'Schreibt nichts in decisions.md, was du nicht vorher gelesen hast',
+      'Kein Wiedereinstieg aus dem Nichts mehr: die nächste Session weiß, wo ihr wart',
+      'Deine Entscheidungen und ihre Begründung überleben jedes /clear und jeden Modellwechsel',
+      'Der Stand bleibt lesbar: ein Dashboard auf einer Bildschirmseite, kein zugewuchertes Tagebuch',
+      'Kein Dienst, keine Datenbank, kein Abo – drei Markdown-Dateien in deinem eigenen Projekt',
     ],
     status: 'stable',
-    tag: 'Ops',
+    tag: 'Memory',
     downloadUrl: '/skills/session-handoff.skill',
     githubUrl: `${GITHUB_REPO_URL}/tree/main/session-handoff`,
     sampleOutput: `# Status — Projekt X
@@ -385,15 +391,15 @@ Humor, null Konzern-Polster.
 
 → 6 erledigte Punkte nach log.md abgeflossen.`,
     problem:
-      'Beim nächsten Öffnen ist der Kontext weg. Entweder steht nichts da, oder die Status-Datei ist über Monate zu einem Tagebuch angewachsen, das niemand mehr liest – und in dem der aktuelle Stand zwischen Erledigtem versteckt ist.',
+      'AI-Sessions vergessen alles. Beim nächsten Öffnen erklärst du dein Projekt wieder von vorn – oder schlimmer: die AI trifft eine Entscheidung neu, die du vor drei Wochen schon getroffen und begründet hattest. Und wo mitgeschrieben wird, wächst die Status-Datei in Monaten zu einem Tagebuch, in dem der aktuelle Stand zwischen Erledigtem verschwindet.',
     howItWorks: [
       { title: 'Installieren', body: 'Skill herunterladen und in deinem AI-Assistenten einbinden. Bringt den /handoff-Command mit.' },
-      { title: 'Am Sessionende auslösen', body: '"Handoff" sagen oder /handoff tippen, solange der Kontext des Gesprächs noch lebt.' },
-      { title: 'Sauber übergeben', body: 'Erledigtes fließt ins log.md, status.md wird überschrieben, decisions.md nur nach deiner Freigabe. Zum Schluss zählt der Skill die Zeilen nach.' },
+      { title: 'Am Sessionende auslösen', body: '"Handoff" sagen oder /handoff tippen, solange der Kontext des Gesprächs noch lebt. Existiert die Struktur noch nicht, legt der Skill sie mit dir gemeinsam an.' },
+      { title: 'Ab jetzt hat dein Projekt ein Gedächtnis', body: 'Drei Dateien, die sich nie überschneiden: status.md sagt, wo du stehst. log.md, was passiert ist. decisions.md, warum du es so entschieden hast – und da schreibt der Skill nichts hinein, was du nicht vorher gelesen und freigegeben hast. Die nächste Session liest das und macht weiter.' },
     ],
     whyBuilt:
-      'Ich arbeite an mehreren Projekten parallel und selten zwei Tage am Stück am selben. Der teuerste Moment war immer der Wiedereinstieg. Drei Dateien mit klarer Aufgabenteilung lösen das – der Skill sorgt dafür, dass sie nicht wieder ineinanderlaufen.',
-    builtFor: ['Claude Code (Skill + /handoff-Command)', 'Jedes Projekt mit Dateien, keine Datenbank nötig', 'Legt die Struktur auf Wunsch selbst an'],
+      'Ich arbeite an mehreren Projekten parallel und selten zwei Tage am Stück am selben. Der teuerste Moment war immer der Wiedereinstieg – und die Fälle, in denen eine frische Session eine längst getroffene Entscheidung aufrollte, weil ihre Begründung nirgends stand. Dateien lösen das: sie überleben jeden Kontext-Reset und du kannst sie lesen, ohne ein Tool zu starten.',
+    builtFor: ['Claude Code (Skill + /handoff-Command)', 'Jedes Projekt mit Dateien – kein Dienst, keine Datenbank', 'Legt die Struktur auf Wunsch selbst an'],
     triggers: ['handoff', 'session ende', 'status.md', 'übergabe', 'weitermachen'],
     preview: {
       kind: 'pipeline',
@@ -410,16 +416,18 @@ Humor, null Konzern-Polster.
   {
     slug: 'fable-prompter',
     name: 'Fable Prompter',
-    tagline: 'Aus der groben Idee ein Prompt, den du abschicken kannst. Ohne Lücken zum Ausfüllen.',
+    tagline: 'Denk mit Opus, arbeite mit Fable: ein Prompt, der präzise sitzt und Tokens spart.',
     subheading:
-      'Optimiert für Claude Fable 5 in Chat und Cowork – Ziel statt Schrittfolge, Inhalt fest eingebaut.',
+      'Lass Opus 5 aus deiner groben Idee den Prompt bauen und schick ihn in Fable 5 ab – die Rechenarbeit landet dort, wo sie hingehört.',
     bullets: [
-      'Keine Platzhalter: kopieren, einfügen, abschicken',
-      'Baut deinen Inhalt direkt ein, statt ihn zu einer Vorlage zu machen',
-      'Setzt Grenzen, wo Eigeninitiative daneben gehen kann – besonders in Cowork',
+      'Spart Tokens und Runden: die Idee steht so präzise drin, dass Fable nicht raten und nachfragen muss',
+      'Nutzt aus, was Fable 5 anders macht – Ziel statt Schrittfolge, Initiative mit klaren Grenzen',
+      'Fertig zum Abschicken: kein Ausfüllfeld, keine eckigen Klammern, kein Nachbessern',
+      'Setzt Leitplanken, wo Eigeninitiative teuer wird – besonders in Cowork mit echten Dateien',
     ],
-    status: 'beta',
+    status: 'stable',
     tag: 'Prompting',
+    note: 'Führ diesen Skill mit Opus 5 aus, nicht mit Fable 5. Opus baut den Prompt, Fable arbeitet ihn ab. Andersherum lässt du das teure Nachdenken vom Modell erledigen, das eigentlich nur ausführen sollte – und zahlst es in Tokens.',
     downloadUrl: '/skills/fable-prompter.skill',
     githubUrl: `${GITHUB_REPO_URL}/tree/main/fable-prompter`,
     sampleOutput: `Vorher:
@@ -432,16 +440,16 @@ Ausgabe für Selbstständige, die am Handy überfliegen.
 Fertig heißt: ~600 Wörter in meinem Ton, plus 5
 Betreffzeilen, deine Empfehlung zuerst."`,
     problem:
-      'Die Prompt-Gewohnheiten von 2024 schaden heute: durchnummerierte Schrittfolgen, Freigabe-Schleifen, "denk Schritt für Schritt". Neuere Modelle arbeiten besser mit einem klaren Ziel und einer Definition von "fertig".',
+      'Ein vager Prompt kostet dich zwei Dinge: Runden und Tokens. Fable fragt nach, rät falsch, du korrigierst, es rechnet erneut. Dazu kommen die Prompt-Gewohnheiten von 2024, die heute aktiv schaden – durchnummerierte Schrittfolgen, Freigabe-Schleifen, "denk Schritt für Schritt". Sie machen das Ergebnis schlechter, nicht besser.',
     howItWorks: [
       { title: 'Installieren', body: 'Skill herunterladen und in deinem AI-Assistenten einbinden.' },
-      { title: 'Idee reinwerfen', body: 'Ein grober Entwurf, eine vage Aufgabe, ein Absatz Kontext – oder ein alter Prompt, der nicht mehr zieht.' },
-      { title: 'Prompt kopieren', body: 'Ein einzelner Codeblock, fertig zum Abschicken. Kein Vorwort, keine Erklärung, keine eckigen Klammern.' },
+      { title: 'Den Prompt von Opus 5 bauen lassen', body: 'Führ diesen Skill mit Opus 5 aus, nicht mit Fable. Wirf eine grobe Idee rein, einen vagen Auftrag, einen Absatz Kontext – oder einen alten Prompt, der nicht mehr zieht. Opus denkt die Aufgabe durch und formuliert sie präzise aus.' },
+      { title: 'Prompt in Fable 5 abschicken', body: 'Ein einzelner Codeblock, fertig zum Kopieren – kein Vorwort, keine eckigen Klammern. Die Denkarbeit ist dann schon erledigt, Fable führt nur noch aus. Genau so nutzt du dein Token-Budget sinnvoll.' },
     ],
     whyBuilt:
-      'Ich habe zu viele Prompts gesehen, die aus lauter Vorsicht überstrukturiert waren – und dadurch schlechter liefen. Der Skill hält meine eigenen Prompts auf dem Stand des Modells, mit dem ich tatsächlich arbeite.',
-    builtFor: ['Claude Fable 5 in Chat und Cowork', 'Nicht für die API – keine System-Prompts, keine Settings', 'Antwortet in der Sprache deiner Eingabe'],
-    triggers: ['prompt schreiben', 'prompt optimieren', 'besserer prompt', 'cowork', 'fable 5'],
+      'Ich habe zu viele Prompts gesehen, die aus lauter Vorsicht überstrukturiert waren und dadurch schlechter liefen. Und ich habe zu oft zugesehen, wie ein starkes Modell erst mal rät, was ich eigentlich will. Beides kostet Geld. Der Skill trennt die zwei Arbeiten sauber: Opus denkt, Fable macht.',
+    builtFor: ['Erstellen mit Opus 5 · Ausführen in Fable 5', 'Chat und Cowork – nicht für die API', 'Antwortet in der Sprache deiner Eingabe'],
+    triggers: ['prompt schreiben', 'prompt optimieren', 'tokens sparen', 'cowork', 'fable 5'],
     preview: {
       kind: 'prompt',
       before: 'Schritt 1: lies meine Notizen. Schritt 2: warte auf Freigabe. Schritt 3: schreib einen Entwurf. Schritt 4: warte auf Freigabe…',
