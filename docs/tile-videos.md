@@ -33,7 +33,7 @@ Ein Prompt pro Kachel, jeweils 8 s, 16:9, 720p. Jeweils direkt kopierbar.
 Overhead shot of a person's hands writing with a pen in a paper notebook on a wooden desk, an open laptop and a cup of coffee beside it, soft natural window light from the left, warm neutral colours, very slow push-in, shallow depth of field, documentary style, no text visible anywhere, 8 seconds.
 ```
 
-### tile-linkedin-pipeline
+### tile-linkedin-content-creation
 
 ```
 Medium handheld shot of a craftsman in his forties standing in a bright workshop, holding his phone up close to his mouth and speaking into it to record a voice memo, dust in the daylight from a large window behind him, natural colours, slight camera drift, documentary style, no text visible, 8 seconds.
@@ -69,4 +69,6 @@ Das Script trimmt auf 8 s, skaliert auf 1280 × 720, wirft die Tonspur weg und s
 `mp4`, `webm` und ein Poster-`jpg` direkt nach `public/labs/video/`. Danach `npm run dev`
 — die Kachel ersetzt ihr Fallback-Panel von selbst, ohne Code-Änderung.
 
-Slugs: `voiceprint` · `linkedin-pipeline` · `jour-fixe` · `session-handoff` · `fable-prompter`
+Slugs: `voiceprint` ✅ · `linkedin-content-creation` · `jour-fixe` · `session-handoff` · `fable-prompter`
+
+Rohclips gehören **nicht** nach `public/` — was dort liegt, wird mitdeployt. Leg sie außerhalb ab (z.B. `assets/tile-sources/`) und gib dem Script den Pfad dorthin.
