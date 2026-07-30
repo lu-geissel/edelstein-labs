@@ -23,38 +23,61 @@ zu bunt aus dem Generator kommt, kollidiert damit.
 **Kein Text im Bild.** Lesbare Schrift auf Bildschirmen oder Papier wird bei
 16:9 → Kachelausschnitt angeschnitten und sieht nach Fehler aus.
 
+## Der Look-Block (an JEDEN Prompt anhängen)
+
+Die Kachel legt selbst einen Purple-Radial-Tint von oben links und einen Verlauf
+ins Seiten-Schwarz nach unten über das Video. Ein heller oder blauer Clip
+kollidiert damit. Dieser Block hält die Farbgebung auf der Seite:
+
+```
+Color and light — follow exactly:
+- Background: near-black deep green (#0A120E), getting darker toward the bottom of the frame.
+- One light source only: a violet-purple glow (#5B2C6F to #9B59B6) from the upper left.
+- Highlights and fine details: warm off-white (#F2F0E9).
+- Never use: blue, cyan, copper, orange, or any white or light-grey background.
+- Nothing readable and no marks: no text, no letters, no numbers, no logos, no brand symbols on any surface.
+- Keep the lower third calm and dark. Subject centred in the upper two thirds.
+- One continuous shot, slow steady motion, no cuts. 8 seconds, 16:9, 720p.
+```
+
+## Das Motiv (ein Satz, ein Gegenstand)
+
+Der Rest des Prompts ist **ein Satz**: ein einziger Gegenstand, an dem man sieht,
+was der Skill tut. Zwei Zustände genügen — vorher und nachher. Je konkreter der
+Gegenstand, desto klarer liest die Kachel.
+
 ## Prompts für Google Flow (Veo)
 
-Ein Prompt pro Kachel, jeweils 8 s, 16:9, 720p. Jeweils direkt kopierbar.
+Motiv-Satz plus Look-Block. Fertige Kacheln sind markiert.
 
-### tile-voiceprint
-
-```
-Overhead shot of a person's hands writing with a pen in a paper notebook on a wooden desk, an open laptop and a cup of coffee beside it, soft natural window light from the left, warm neutral colours, very slow push-in, shallow depth of field, documentary style, no text visible anywhere, 8 seconds.
-```
-
-### tile-linkedin-content-creation
+### tile-voiceprint ✅
 
 ```
-Medium handheld shot of a craftsman in his forties standing in a bright workshop, holding his phone up close to his mouth and speaking into it to record a voice memo, dust in the daylight from a large window behind him, natural colours, slight camera drift, documentary style, no text visible, 8 seconds.
+A hand writes with a pen in a notebook on a wooden desk; the written lines lift off the page as thin glowing threads and weave themselves into one steady, even ribbon of light.
 ```
 
-### tile-jour-fixe
+### tile-linkedin-content-creation ✅
 
 ```
-Wide static shot of three colleagues in a bright modern meeting room looking at a large wall screen, one of them standing and gesturing towards it while the others take notes, daylight from floor-to-ceiling windows, neutral colours, calm realistic office documentary style, the screen content is blurred and unreadable, no legible text, 8 seconds.
+A scattered cloud of small fragments — shards, sparks, loose pieces — spirals inward above a dark surface and compresses into one single solid, clean-edged block.
 ```
 
-### tile-session-handoff
+### tile-jour-fixe ✅
 
 ```
-Wide static shot of an office in the late evening, one person closes a laptop, picks up a jacket and walks out of frame, a single desk lamp stays on over the empty desk, warm low light against blue dusk through the windows, calm and quiet, cinematic documentary style, no text visible, 8 seconds.
+Seven glowing markers sit scattered across a dark grid; they slide into one straight row, and one marker at the end stays dark while the others light up.
 ```
 
-### tile-fable-prompter
+### tile-fable-prompter — neu zu generieren
 
 ```
-Close-up over-the-shoulder shot of hands typing on a laptop keyboard at night, screen glow on the fingers, shallow depth of field, the screen is out of focus and unreadable, warm desk lamp behind, slow drift to the right, cinematic documentary style, no legible text, 8 seconds.
+A loose tangled ball of glowing threads floats above a dark surface, gets drawn into a narrow glass channel, and leaves the other side as one straight beam of light that shoots off fast.
+```
+
+### tile-session-handoff — offen
+
+```
+A glowing object in a dark room slowly dissolves into nothing, and as it fades its exact shape burns itself into a solid stone slab below, which stays lit after the object is gone.
 ```
 
 ## Verarbeitung
