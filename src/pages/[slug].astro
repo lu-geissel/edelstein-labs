@@ -1,6 +1,7 @@
 ---
 import LabsLayout from '../layouts/LabsLayout.astro';
 import SkillPreview from '../components/SkillPreview.astro';
+import ClaudeBadge from '../components/ClaudeBadge.astro';
 import { skills, GITHUB_REPO_URL, MARKETPLACE } from '../data/skills';
 import type { Skill } from '../data/skills';
 
@@ -45,7 +46,10 @@ const cmdUnzip =
   <!-- ==================== HERO ==================== -->
   <section class="max-w-5xl mx-auto px-5 md:px-8 pt-10 pb-16 grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
     <div data-animate>
-      <span class="mono-label text-deep-beige/50">{skill.tag}</span>
+      <div class="flex items-center gap-3 flex-wrap">
+        <span class="mono-label text-deep-beige/50">{skill.tag}</span>
+        <ClaudeBadge size="sm" />
+      </div>
       <h1 class="font-serif text-4xl md:text-5xl lg:text-[3.4rem] text-deep-beige leading-[1.05] mt-3">
         {skill.name}
       </h1>
