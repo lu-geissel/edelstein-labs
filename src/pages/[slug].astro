@@ -20,7 +20,13 @@ const meta = {
 
 const cmdMarketplace = `/plugin marketplace add ${repoSlug}`;
 const cmdInstall = `/plugin install ${skill.slug}@${MARKETPLACE}`;
-const cmdUnzip = `unzip ${skill.slug}.skill -d ~/.claude/skills/`;
+/* Der Dateiname kann vom Slug abweichen (ein Plugin kann mehrere Skills bündeln). */
+const skillFiles = [skill.downloadUrl, ...(skill.extraDownloads ?? []).map((d) => d.url)]
+  .map((url) => url.split('/').pop());
+const cmdUnzip =
+  skillFiles.length === 1
+    ? `unzip ${skillFiles[0]} -d ~/.claude/skills/`
+    : `for f in ${skillFiles.join(' ')}; do unzip "$f" -d ~/.claude/skills/; done`;
 ---
 <LabsLayout {...meta}>
   <!-- ==================== BREADCRUMB ==================== -->
@@ -64,6 +70,17 @@ const cmdUnzip = `unzip ${skill.slug}.skill -d ~/.claude/skills/`;
           Auf GitHub <span aria-hidden="true">↗</span>
         </a>
       </div>
+
+      {skill.extraDownloads && skill.extraDownloads.length > 0 && (
+        <p class="text-sm text-deep-beige/55 leading-relaxed mt-5">
+          Dieses Plugin bündelt mehrere Skills. Für claude.ai zusätzlich laden:
+          {skill.extraDownloads.map((d) => (
+            <a href={d.url} download class="text-gem-purple-light hover:text-deep-beige transition-colors ml-1.5 font-mono text-xs">
+              {d.label} ↓
+            </a>
+          ))}
+        </p>
+      )}
     </div>
 
     <div data-animate data-delay="150" data-parallax data-depth="8" class="flex justify-center lg:justify-end will-change-transform">

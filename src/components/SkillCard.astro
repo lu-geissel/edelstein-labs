@@ -1,8 +1,15 @@
 ---
+import fs from 'node:fs';
 import type { Skill } from '../data/skills';
 interface Props { skill: Skill; delay?: number; }
 const { skill, delay = 0 } = Astro.props;
 const statusLabel = skill.status === 'stable' ? 'Free' : 'Beta';
+
+/* Kacheln ohne Stock-Footage bekommen ein typografisches Fallback-Panel,
+   damit ein neuer Skill nicht auf ein schwarzes Rechteck läuft. */
+const hasVideo = fs.existsSync(
+  new URL(`../../public/labs/video/tile-${skill.slug}.mp4`, import.meta.url),
+);
 ---
 <a
   href={`/${skill.slug}`}
@@ -12,14 +19,22 @@ const statusLabel = skill.status === 'stable' ? 'Free' : 'Beta';
 >
   <!-- Stock footage preview (people, in motion) -->
   <div class="relative h-56 overflow-hidden border-b border-[color:var(--color-labs-line)] bg-black/50">
-    <video
-      class="absolute inset-0 w-full h-full object-cover opacity-95 transition-transform duration-[1200ms] ease-out group-hover:scale-105"
-      autoplay muted loop playsinline preload="metadata"
-      poster={`/labs/video/tile-${skill.slug}.jpg`}
-    >
-      <source src={`/labs/video/tile-${skill.slug}.webm`} type="video/webm" />
-      <source src={`/labs/video/tile-${skill.slug}.mp4`} type="video/mp4" />
-    </video>
+    {hasVideo ? (
+      <video
+        class="absolute inset-0 w-full h-full object-cover opacity-95 transition-transform duration-[1200ms] ease-out group-hover:scale-105"
+        autoplay muted loop playsinline preload="metadata"
+        poster={`/labs/video/tile-${skill.slug}.jpg`}
+      >
+        <source src={`/labs/video/tile-${skill.slug}.webm`} type="video/webm" />
+        <source src={`/labs/video/tile-${skill.slug}.mp4`} type="video/mp4" />
+      </video>
+    ) : (
+      <div class="absolute inset-0 flex items-center justify-center bg-[linear-gradient(140deg,rgba(91,44,111,0.35),rgba(10,18,14,0.9))] transition-transform duration-[1200ms] ease-out group-hover:scale-105">
+        <span class="font-serif text-[3.6rem] leading-none text-deep-beige/25 select-none" aria-hidden="true">
+          {skill.name.split(' ').map((w) => w[0]).join('').slice(0, 2)}
+        </span>
+      </div>
+    )}
     <!-- subtle CI tint + bottom fade into the card -->
     <div class="absolute inset-0 bg-[radial-gradient(80%_80%_at_25%_10%,rgba(91,44,111,0.25),transparent_70%)]"></div>
     <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-labs-bg"></div>
