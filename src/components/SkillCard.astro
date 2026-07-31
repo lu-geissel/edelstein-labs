@@ -1,6 +1,5 @@
 ---
 import fs from 'node:fs';
-import ClaudeBadge from './ClaudeBadge.astro';
 import type { Skill } from '../data/skills';
 interface Props { skill: Skill; delay?: number; }
 const { skill, delay = 0 } = Astro.props;
@@ -39,11 +38,6 @@ const hasVideo = fs.existsSync(
     <!-- subtle CI tint + bottom fade into the card -->
     <div class="absolute inset-0 bg-[radial-gradient(80%_80%_at_25%_10%,rgba(91,44,111,0.25),transparent_70%)]"></div>
     <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-labs-bg"></div>
-
-    <!-- referenzieller Hinweis, unten links über dem Medium -->
-    <div class="absolute bottom-4 left-5 z-10">
-      <ClaudeBadge size="sm" />
-    </div>
 
     <!-- labels over media -->
     <div class="absolute inset-x-0 top-0 p-5 flex items-start justify-between gap-3">
