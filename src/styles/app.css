@@ -1,56 +1,29 @@
-@import "tailwindcss";
-
-/* ===== Edelstein Labs — Theme ===== */
-@theme {
-  /* Brand Colors (CI — unchanged) */
-  --color-deep-beige: #F2F0E9;
-  --color-paper: #F9F8F4;
-  --color-jungle-green: #1A2E25;
-  --color-gem-purple: #5B2C6F;
-  --color-gem-purple-light: #9B59B6;
-  --color-stone-dark: #292524;
-
-  /* Labs dark shades (darker tints of jungle-green — not a new hue) */
-  --color-labs-bg: #0A120E;
-  --color-labs-bg2: #0E1A14;
-  --color-labs-panel: #14241C;
-  --color-labs-line: rgba(242, 240, 233, 0.12);
-  --color-labs-green: #34D399;
-
-  /* Fonts */
-  --font-sans: 'Inter', sans-serif;
-  --font-serif: 'Playfair Display', serif;
-  --font-display: 'Cinzel', serif;
-  --font-signature: 'Mrs Saint Delafield', cursive;
-  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+/* Edelstein Labs — tokens and base. Brand values from edelstein-website/src/styles/site-tokens.css.
+   Labs look ("Signal"): dark instrument panel, dot matrix, orange signal. */
+:root{
+  --ink:#0f0f0d; --dark:#211e1a; --panel:#171613; --paper:#f2f0eb; --orange:#ff3b18;
+  --signal-dim:#6b2414; --muted:rgba(242,240,235,.72); --faint:rgba(242,240,235,.46);
+  --line:rgba(242,240,235,.22); --line-soft:rgba(242,240,235,.1);
+  --display:'Playfair Display',Georgia,serif; --text:Inter,Arial,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,'SF Mono',Menlo,monospace;
+  --gutter:clamp(16px,3vw,64px); --max:1680px; --section:clamp(72px,8vw,136px);
+  --ease:cubic-bezier(.16,1,.3,1);
+  color-scheme:dark;
 }
-
-/* ===== Base ===== */
-html {
-  scroll-behavior: smooth;
-  background-color: var(--color-labs-bg);
-}
-
-body {
-  background-color: var(--color-labs-bg);
-  color: var(--color-deep-beige);
-  font-family: var(--font-sans);
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  overflow-x: hidden;
-}
-
-::selection {
-  background: var(--color-gem-purple);
-  color: #fff;
-}
-
-/* Custom scrollbar (subtle, on-brand) */
-::-webkit-scrollbar { width: 10px; height: 10px; }
-::-webkit-scrollbar-track { background: var(--color-labs-bg); }
-::-webkit-scrollbar-thumb {
-  background: rgba(155, 89, 182, 0.35);
-  border-radius: 0;
-  border: 2px solid var(--color-labs-bg);
-}
-::-webkit-scrollbar-thumb:hover { background: rgba(155, 89, 182, 0.55); }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--ink)}
+body{margin:0;background:var(--ink);color:var(--paper);font:400 16px/1.55 var(--text);-webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(var(--line-soft) 1px,transparent 1.2px);background-size:24px 24px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--ink)}
+a{color:inherit}
+img,video,canvas{max-width:100%}
+h1,h2,h3{text-wrap:balance;margin:0;font-weight:400}
+p{margin:0;text-wrap:pretty}
+::selection{background:var(--orange);color:var(--ink)}
+:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:max(var(--gutter),env(safe-area-inset-left,0px));padding-right:max(var(--gutter),env(safe-area-inset-right,0px))}
+.mono{font:500 11px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.o{color:var(--orange)}
+.led{display:inline-block;width:6px;height:6px;background:var(--orange);box-shadow:0 0 10px var(--orange);animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.35;box-shadow:none}}
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}

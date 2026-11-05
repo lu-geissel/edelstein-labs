@@ -1,65 +1,36 @@
 ---
 import fs from 'node:fs';
 import type { Skill } from '../data/skills';
-interface Props { skill: Skill; delay?: number; }
-const { skill, delay = 0 } = Astro.props;
-const statusLabel = skill.status === 'stable' ? 'Free' : 'Beta';
+interface Props { skill: Skill; }
+const { skill } = Astro.props;
 
-/* Kacheln ohne Stock-Footage bekommen ein typografisches Fallback-Panel,
-   damit ein neuer Skill nicht auf ein schwarzes Rechteck läuft. */
+/* Tiles without stock footage get a typographic fallback instead of an empty box. */
 const hasVideo = fs.existsSync(
   new URL(`../../public/labs/video/tile-${skill.slug}.mp4`, import.meta.url),
 );
+const initials = skill.name.split(' ').map((w) => w[0]).join('').slice(0, 2);
 ---
-<a
-  href={`/${skill.slug}`}
-  data-animate
-  data-delay={delay}
-  class="group glass shimmer-host flex flex-col h-full overflow-hidden transition-all duration-500 hover:-translate-y-1.5 hover:glow-ring"
->
-  <!-- Stock footage preview (people, in motion) -->
-  <div class="relative h-56 overflow-hidden border-b border-[color:var(--color-labs-line)] bg-black/50">
+<a class="mod" href={`/${skill.slug}`}>
+  <span class="screen">
     {hasVideo ? (
-      <video
-        class="absolute inset-0 w-full h-full object-cover opacity-95 transition-transform duration-[1200ms] ease-out group-hover:scale-105"
-        autoplay muted loop playsinline preload="metadata"
-        poster={`/labs/video/tile-${skill.slug}.jpg`}
-      >
+      <video autoplay muted loop playsinline preload="metadata" aria-hidden="true"
+             poster={`/labs/video/tile-${skill.slug}.jpg`}>
         <source src={`/labs/video/tile-${skill.slug}.webm`} type="video/webm" />
         <source src={`/labs/video/tile-${skill.slug}.mp4`} type="video/mp4" />
       </video>
     ) : (
-      <div class="absolute inset-0 flex items-center justify-center bg-[linear-gradient(140deg,rgba(91,44,111,0.35),rgba(10,18,14,0.9))] transition-transform duration-[1200ms] ease-out group-hover:scale-105">
-        <span class="font-serif text-[3.6rem] leading-none text-deep-beige/25 select-none" aria-hidden="true">
-          {skill.name.split(' ').map((w) => w[0]).join('').slice(0, 2)}
-        </span>
-      </div>
+      <span class="screen-fallback" aria-hidden="true">{initials}</span>
     )}
-    <!-- subtle CI tint + bottom fade into the card -->
-    <div class="absolute inset-0 bg-[radial-gradient(80%_80%_at_25%_10%,rgba(91,44,111,0.25),transparent_70%)]"></div>
-    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-labs-bg"></div>
-
-    <!-- labels over media -->
-    <div class="absolute inset-x-0 top-0 p-5 flex items-start justify-between gap-3">
-      <span class="mono-label text-deep-beige/80">{skill.tag}</span>
-      <span class={`inline-flex items-center gap-2 mono-label glass px-2 py-1 ${skill.status === 'stable' ? 'text-labs-green' : 'text-gem-purple-light'}`}>
-        <span class={`inline-block w-1.5 h-1.5 rounded-full dot-glow ${skill.status === 'stable' ? 'bg-labs-green text-labs-green' : 'bg-gem-purple-light text-gem-purple-light'}`}></span>
-        {statusLabel}
-      </span>
-    </div>
-  </div>
-
-  <!-- Meta -->
-  <div class="p-7 md:p-8 flex flex-col flex-grow">
-    <h3 class="font-serif text-2xl md:text-[1.7rem] text-deep-beige leading-snug mb-3 group-hover:text-glow transition-all">
-      {skill.name}
-    </h3>
-    <p class="text-deep-beige/55 leading-relaxed mb-7 flex-grow">
-      {skill.tagline}
-    </p>
-    <span class="inline-flex items-center gap-2 mono-label text-gem-purple-light group-hover:text-deep-beige transition-colors">
-      Details ansehen
-      <span aria-hidden="true" class="transition-transform group-hover:translate-x-1">→</span>
+    <span class="scan"></span>
+  </span>
+  <span class="mod-body">
+    <span class="mod-id">
+      <span>~/skills/<b>{skill.slug}</b></span>
+      {skill.status !== 'stable' && <span>Beta</span>}
     </span>
-  </div>
+    <h3>{skill.name}</h3>
+    <p>{skill.tagline}</p>
+    <span class="sig">{skill.triggers.slice(0, 3).map((t) => <span>{t}</span>)}</span>
+    <span class="more mono"><span>Details ansehen</span><i aria-hidden="true">↗</i></span>
+  </span>
 </a>

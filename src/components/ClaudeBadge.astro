@@ -15,35 +15,10 @@ import fs from 'node:fs';
  * für helle Untergründe gebaut), das Logo wird nur uniform skaliert, nie
  * verzerrt oder rotiert, und hat Freiraum in Höhe seiner selbst.
  */
-interface Props {
-  /** 'sm' für Kacheln, 'md' für Detailseiten */
-  size?: 'sm' | 'md';
-  class?: string;
-}
-const { size = 'sm', class: className = '' } = Astro.props;
-
 const logoPath = new URL('../../public/brand/claude-logo.svg', import.meta.url);
-const hasLogo = fs.existsSync(logoPath);
-const logoSvg = hasLogo ? fs.readFileSync(logoPath, 'utf-8') : null;
-
-const box = size === 'md' ? 'px-3.5 py-2 gap-2.5' : 'px-2.5 py-1.5 gap-2';
-const glyph = size === 'md' ? 'h-4' : 'h-3';
+const logoSvg = fs.existsSync(logoPath) ? fs.readFileSync(logoPath, 'utf-8') : null;
 ---
-<span
-  class={`inline-flex items-center ${box} ${className} bg-[color:var(--color-deep-beige)]/92 backdrop-blur-sm`}
-  title="Diese Skills laufen in Claude – ohne Verbindung zu Anthropic."
->
-  {logoSvg && (
-    <span class={`claude-glyph ${glyph} shrink-0 inline-flex items-center`} aria-hidden="true" set:html={logoSvg} />
-  )}
-  <span class="mono-label text-[color:var(--color-labs-bg)]/85 whitespace-nowrap">Works with Claude</span>
+<span class="claude-badge" title="Diese Skills laufen in Claude – ohne Verbindung zu Anthropic.">
+  {logoSvg && <span class="glyph" aria-hidden="true" set:html={logoSvg} />}
+  <span class="mono">Works with Claude</span>
 </span>
-
-<style>
-  /* Logo nur uniform skalieren – nie verzerren, nie rotieren. */
-  .claude-glyph :global(svg) {
-    height: 100%;
-    width: auto;
-    display: block;
-  }
-</style>

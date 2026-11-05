@@ -1,241 +1,76 @@
 ---
+/* Snapshot of what the skill produces, shown in the detail hero. The panel head
+   (label + state) is rendered by the page; strategy steps are drawn as the node graph. */
 import type { Skill } from '../data/skills';
 interface Props { skill: Skill; }
 const { skill } = Astro.props;
 const p = skill.preview;
 ---
-<div class="glass-strong shimmer-host p-6 md:p-7 w-full max-w-md">
+<div class="pv">
   {p.kind === 'brand-profile' && (
-    <div>
-      <div class="flex items-center justify-between mb-6">
-        <span class="mono-label text-deep-beige/55">Brand Profile</span>
-        <span class="mono-label text-gem-purple-light flex items-center gap-1.5">
-          <span class="inline-block w-1.5 h-1.5 rounded-full bg-gem-purple-light dot-glow text-gem-purple-light"></span>
-          Extracted
-        </span>
-      </div>
-
-      <div class="grid grid-cols-3 gap-3 mb-6">
-        {p.colors.map((c, i) => (
-          <div data-animate data-delay={120 + i * 120} class="flex flex-col gap-2">
-            <div class="h-14 border border-white/10" style={`background:${c.hex}`}></div>
-            <div class="leading-tight">
-              <div class="mono-label text-deep-beige/70">{c.label}</div>
-              <div class="font-mono text-[0.65rem] text-deep-beige/40">{c.hex}</div>
-            </div>
-          </div>
+    <Fragment>
+      <div class="pv-swatches">
+        {p.colors.map((c) => (
+          <div><span class="pv-swatch" style={`background:${c.hex}`}></span><span class="pv-label">{c.label}</span><code>{c.hex}</code></div>
         ))}
       </div>
-
-      <div class="space-y-2.5 mb-6">
-        <div class="flex items-baseline justify-between border-b border-white/5 pb-2">
-          <span class="mono-label text-deep-beige/45">Headline</span>
-          <span class="font-serif text-lg text-deep-beige">{p.fonts.headline}</span>
-        </div>
-        <div class="flex items-baseline justify-between border-b border-white/5 pb-2">
-          <span class="mono-label text-deep-beige/45">Body</span>
-          <span class="font-sans text-base text-deep-beige/90">{p.fonts.body}</span>
-        </div>
-      </div>
-
-      <div class="flex flex-wrap gap-2">
-        {p.tones.map((t, i) => (
-          <span data-animate data-delay={400 + i * 100}
-                class="mono-label text-gem-purple-light/90 border border-gem-purple-light/30 px-2 py-1">{t}</span>
-        ))}
-      </div>
-    </div>
+      <dl class="pv-rows">
+        <div><dt class="pv-label">Headline</dt><dd class="pv-serif">{p.fonts.headline}</dd></div>
+        <div><dt class="pv-label">Body</dt><dd>{p.fonts.body}</dd></div>
+      </dl>
+      <div class="pv-chips">{p.tones.map((t) => <span>{t}</span>)}</div>
+    </Fragment>
   )}
 
   {p.kind === 'script-scene' && (
-    <div>
-      <div class="flex items-center justify-between mb-5">
-        <span class="mono-label text-deep-beige/55">{p.scene}</span>
-        <span class="mono-label text-deep-beige/40">{p.timecode}</span>
-      </div>
-
-      <div class="mb-5">
-        <div class="mono-label text-gem-purple-light/80 mb-2">Sprechertext</div>
-        <p class="font-serif text-lg md:text-xl text-deep-beige leading-snug min-h-[3.5rem]"
-           data-typewriter data-speed="34">{p.voiceover}</p>
-      </div>
-
-      <div class="mb-6">
-        <div class="mono-label text-deep-beige/40 mb-2">Animation</div>
-        <p class="text-sm text-deep-beige/55 leading-relaxed">{p.animation}</p>
-      </div>
-
-      <div class="flex items-center gap-3">
-        <div class="flex-1 h-1 bg-white/8 overflow-hidden">
-          <div class="h-full w-[34%] bg-gem-purple-light/80"></div>
-        </div>
-        <span class="mono-label text-deep-beige/45 shrink-0">{p.words} Wörter</span>
-      </div>
-    </div>
+    <Fragment>
+      <div><span class="pv-label">Sprechertext</span><p class="pv-serif pv-big">{p.voiceover}</p></div>
+      <div><span class="pv-label">Animation</span><p class="pv-small">{p.animation}</p></div>
+      <div class="pv-meter"><span><i style="width:34%"></i></span><span class="pv-label">{p.words} Wörter</span></div>
+    </Fragment>
   )}
 
   {p.kind === 'strategy' && (
-    <div>
-      <div class="flex items-center justify-between mb-5">
-        <span class="mono-label text-deep-beige/55">Brand Strategy Guide</span>
-        <span class="mono-label text-gem-purple-light flex items-center gap-1.5">
-          <span class="inline-block w-1.5 h-1.5 rounded-full bg-gem-purple-light dot-glow text-gem-purple-light"></span>
-          Ready
-        </span>
-      </div>
-
-      <div class="flex flex-wrap items-center gap-1.5 mb-6">
-        {p.steps.map((s, i) => (
-          <span data-animate data-delay={120 + i * 110}
-                class={`mono-label px-2 py-1 border ${i === 1 ? 'text-deep-beige border-gem-purple-light/60 bg-gem-purple/25' : 'text-deep-beige/45 border-white/10'}`}>{s}</span>
-        ))}
-      </div>
-
-      <div class="space-y-4">
-        <div>
-          <div class="mono-label text-deep-beige/40 mb-1.5">Substance</div>
-          <p class="font-serif text-base text-deep-beige leading-snug">{p.substance}</p>
-        </div>
-        <div class="border-t border-white/5 pt-4">
-          <div class="mono-label text-gem-purple-light/80 mb-1.5">Positioning</div>
-          <p class="text-sm text-deep-beige/70 leading-relaxed">{p.positioning}</p>
-        </div>
-      </div>
-    </div>
+    <Fragment>
+      <div><span class="pv-label">Substance</span><p class="pv-serif pv-big">{p.substance}</p></div>
+      <div class="pv-rule"><span class="pv-label pv-accent">Positioning</span><p class="pv-small">{p.positioning}</p></div>
+    </Fragment>
   )}
 
   {p.kind === 'voice-profile' && (
-    <div>
-      <div class="flex items-center justify-between mb-5">
-        <span class="mono-label text-deep-beige/55">VOICE.md</span>
-        <span class="mono-label text-gem-purple-light flex items-center gap-1.5">
-          <span class="inline-block w-1.5 h-1.5 rounded-full bg-gem-purple-light dot-glow text-gem-purple-light"></span>
-          {p.samples} Proben
-        </span>
+    <Fragment>
+      <div><span class="pv-label">Voice DNA</span><p class="pv-serif pv-big">{p.dna}</p></div>
+      <div class="pv-cols">
+        <div><span class="pv-label pv-accent">Nutzt</span><ul class="pv-words">{p.uses.map((w) => <li>{w}</li>)}</ul></div>
+        <div><span class="pv-label">Vermeidet</span><ul class="pv-words pv-words--off">{p.avoids.map((w) => <li><s>{w}</s></li>)}</ul></div>
       </div>
-
-      <div class="mb-6">
-        <div class="mono-label text-deep-beige/40 mb-2">Voice DNA</div>
-        <p class="font-serif text-lg text-deep-beige leading-snug min-h-[3.5rem]"
-           data-typewriter data-speed="30">{p.dna}</p>
-      </div>
-
-      <div class="grid grid-cols-2 gap-5">
-        <div>
-          <div class="mono-label text-labs-green/80 mb-2.5">Nutzt</div>
-          <ul class="space-y-1.5">
-            {p.uses.map((w, i) => (
-              <li data-animate data-delay={220 + i * 90}
-                  class="font-mono text-[0.7rem] text-deep-beige/75 border-l border-labs-green/40 pl-2.5">{w}</li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <div class="mono-label text-deep-beige/40 mb-2.5">Vermeidet</div>
-          <ul class="space-y-1.5">
-            {p.avoids.map((w, i) => (
-              <li data-animate data-delay={220 + i * 90}
-                  class="font-mono text-[0.7rem] text-deep-beige/35 border-l border-white/10 pl-2.5 line-through decoration-white/20">{w}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </div>
+    </Fragment>
   )}
 
   {p.kind === 'pipeline' && (
-    <div>
-      <div class="flex items-center justify-between mb-6">
-        <span class="mono-label text-deep-beige/55">{p.label}</span>
-        <span class="mono-label text-gem-purple-light flex items-center gap-1.5">
-          <span class="inline-block w-1.5 h-1.5 rounded-full bg-gem-purple-light dot-glow text-gem-purple-light"></span>
-          Läuft
-        </span>
-      </div>
-
-      <ol class="space-y-2.5 mb-6">
-        {p.steps.map((s, i) => (
-          <li data-animate data-delay={120 + i * 110}
-              class={`flex items-center gap-3 border px-3 py-2.5 ${
-                s.state === 'gate'
-                  ? 'border-gem-purple-light/60 bg-gem-purple/20'
-                  : s.state === 'done'
-                    ? 'border-white/10'
-                    : 'border-white/5'
-              }`}>
-            <span class={`inline-block w-1.5 h-1.5 rounded-full shrink-0 ${
-              s.state === 'gate'
-                ? 'bg-gem-purple-light dot-glow text-gem-purple-light'
-                : s.state === 'done'
-                  ? 'bg-labs-green'
-                  : 'bg-white/20'
-            }`}></span>
-            <span class={`mono-label ${s.state === 'todo' ? 'text-deep-beige/30' : 'text-deep-beige/80'}`}>{s.name}</span>
-            {s.state === 'gate' && (
-              <span class="mono-label text-gem-purple-light ml-auto shrink-0">wartet</span>
-            )}
-            {s.state === 'done' && (
-              <span class="mono-label text-deep-beige/25 ml-auto shrink-0">ok</span>
-            )}
-          </li>
+    <Fragment>
+      <ol class="pv-pipe">
+        {p.steps.map((s) => (
+          <li class={`is-${s.state}`}><i></i><span>{s.name}</span><em>{s.state === 'gate' ? 'wartet' : s.state === 'done' ? 'ok' : ''}</em></li>
         ))}
       </ol>
-
-      <p class="text-sm text-deep-beige/55 leading-relaxed border-t border-white/5 pt-4">{p.note}</p>
-    </div>
+      <p class="pv-small pv-rule">{p.note}</p>
+    </Fragment>
   )}
 
   {p.kind === 'prompt' && (
-    <div>
-      <div class="flex items-center justify-between mb-5">
-        <span class="mono-label text-deep-beige/55">Prompt</span>
-        <span class="mono-label text-gem-purple-light flex items-center gap-1.5">
-          <span class="inline-block w-1.5 h-1.5 rounded-full bg-gem-purple-light dot-glow text-gem-purple-light"></span>
-          Optimiert
-        </span>
-      </div>
-
-      <div class="mb-5">
-        <div class="mono-label text-deep-beige/40 mb-2">Vorher</div>
-        <p class="font-mono text-[0.7rem] text-deep-beige/35 leading-relaxed border-l border-white/10 pl-3">{p.before}</p>
-      </div>
-
-      <div class="flex justify-center mb-5" aria-hidden="true">
-        <span class="text-gem-purple-light/60 text-lg">↓</span>
-      </div>
-
-      <div>
-        <div class="mono-label text-gem-purple-light/80 mb-2">Nachher</div>
-        <p class="text-sm text-deep-beige/85 leading-relaxed border-l border-gem-purple-light/50 pl-3 min-h-[4rem]"
-           data-typewriter data-speed="18">{p.after}</p>
-      </div>
-    </div>
+    <Fragment>
+      <div><span class="pv-label">Vorher</span><p class="pv-mono pv-off">{p.before}</p></div>
+      <div><span class="pv-label pv-accent">Nachher</span><p class="pv-small pv-on">{p.after}</p></div>
+    </Fragment>
   )}
 
   {p.kind === 'deck' && (
-    <div>
-      <div class="flex items-center justify-between mb-5">
-        <span class="mono-label text-deep-beige/55">{p.cover}</span>
-        <span class="mono-label text-gem-purple-light flex items-center gap-1.5">
-          <span class="inline-block w-1.5 h-1.5 rounded-full bg-gem-purple-light dot-glow text-gem-purple-light"></span>
-          Entwurf
-        </span>
+    <Fragment>
+      <div class="pv-slides">
+        {p.slides.map((s) => <div><strong class="pv-serif">{s.title}</strong><span class="pv-small">{s.body}</span></div>)}
       </div>
-
-      <div class="space-y-3 mb-6">
-        {p.slides.map((s, i) => (
-          <div data-animate data-delay={140 + i * 130}
-               class="border border-white/10 p-4 aspect-[16/7] flex flex-col justify-center bg-black/20">
-            <div class="font-serif text-base text-deep-beige leading-snug mb-1.5">{s.title}</div>
-            <div class="text-xs text-deep-beige/50 leading-relaxed">{s.body}</div>
-          </div>
-        ))}
-      </div>
-
-      <div class="border-t border-white/5 pt-4">
-        <div class="mono-label text-gem-purple-light/80 mb-1.5">Offene Frage</div>
-        <p class="text-sm text-deep-beige/65 leading-relaxed">{p.open}</p>
-      </div>
-    </div>
+      <div class="pv-rule"><span class="pv-label pv-accent">Offene Frage</span><p class="pv-small">{p.open}</p></div>
+    </Fragment>
   )}
 </div>

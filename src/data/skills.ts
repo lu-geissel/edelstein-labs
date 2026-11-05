@@ -101,9 +101,9 @@ export const skills: Skill[] = [
     sampleOutput: `{
   "brand_profile": {
     "colors": {
-      "primary": "#1A2E25",
-      "secondary": "#F2F0E9",
-      "accent": "#5B2C6F"
+      "primary": "#211E1A",
+      "secondary": "#F2F0EB",
+      "accent": "#FF3B18"
     },
     "fonts": {
       "headline": "Playfair Display",
@@ -126,9 +126,9 @@ export const skills: Skill[] = [
     preview: {
       kind: 'brand-profile',
       colors: [
-        { label: 'Primary', hex: '#1A2E25' },
-        { label: 'Paper', hex: '#F2F0E9' },
-        { label: 'Accent', hex: '#5B2C6F' },
+        { label: 'Dark', hex: '#211E1A' },
+        { label: 'Paper', hex: '#F2F0EB' },
+        { label: 'Accent', hex: '#FF3B18' },
       ],
       fonts: { headline: 'Playfair Display', body: 'Inter' },
       tones: ['präzise', 'editorial', 'selbstsicher'],
