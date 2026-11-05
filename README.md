@@ -6,7 +6,7 @@ Eigenständige „Labs"-Subsite von [Edelstein Strategie](https://edelsteinstrat
 
 ## Stack
 - [Astro 5](https://astro.build) (static output)
-- Plain CSS (`src/styles/`); das Tailwind-Plugin ist noch eingebunden, wird aber nicht mehr genutzt
+- Plain CSS (`src/styles/`)
 - Self-hosted fonts via `@fontsource` (Inter, Playfair Display, JetBrains Mono)
 - Self-hosted Background-/Tile-Videos in `public/labs/video/`
 
@@ -22,7 +22,7 @@ npm run preview
 - `src/pages/index.astro` — Galerie (Hero, Skill-Grid, „Warum kostenlos", CTA)
 - `src/pages/[slug].astro` — Skill-Detailseiten
 - `src/data/skills.ts` — Skill-Daten (Single Source of Truth)
-- `src/components/` — LabsHeader/Footer, SkillCard (Modul-Kachel), SkillPreview (Vorschau je `preview.kind`), ClaudeBadge; `HeroDeck` ist seit dem Rebrand ungenutzt
+- `src/components/` — LabsHeader/Footer, SkillCard (Modul-Kachel), SkillPreview (Vorschau je `preview.kind`), ClaudeBadge
 - `src/styles/` — `app.css` (Tokens, Basis), `labs.css` (Komponenten)
 - `src/utils/animations.ts` — Punktraster im Hero, Kopierknöpfe, Reduced Motion
 - `public/brand/edelstein-wordmark.svg` — Kopie der Wortmarke aus `edelstein-website`
