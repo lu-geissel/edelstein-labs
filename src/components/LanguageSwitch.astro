@@ -1,0 +1,17 @@
+---
+/* DE / EN switch. The current language is plain text, the other one a link to the same page.
+   Clicking sets the shared `lang` cookie (see initLanguageSwitch in utils/animations.ts),
+   which wins over the browser language in the redirects in vercel.json. */
+import { pathFor, texts, toLocale, locales } from '../i18n';
+const current = toLocale(Astro.currentLocale);
+const t = texts('common', current).language;
+const path = Astro.url.pathname.replace(/\/index\.html$/, '/').replace(/(.)\/$/, '$1');
+---
+<div class="lang mono" role="group" aria-label={t.label}>
+  {locales.map((locale, index) => <>
+    {index > 0 && <span class="lang-sep" aria-hidden="true">/</span>}
+    {locale === current
+      ? <span class="lang-current" aria-current="true" lang={locale}>{locale.toUpperCase()}</span>
+      : <a href={pathFor(path, locale)} hreflang={locale} lang={locale} data-language-switch={locale}>{locale.toUpperCase()}<span class="visually-hidden"> – {t.switchTo}</span></a>}
+  </>)}
+</div>

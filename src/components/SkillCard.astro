@@ -1,8 +1,10 @@
 ---
 import fs from 'node:fs';
 import type { Skill } from '../data/skills';
+import { texts, localizeHref } from '../i18n';
 interface Props { skill: Skill; }
 const { skill } = Astro.props;
+const t = texts('skill', Astro.currentLocale).card;
 
 /* Tiles without stock footage get a typographic fallback instead of an empty box. */
 const hasVideo = fs.existsSync(
@@ -10,7 +12,7 @@ const hasVideo = fs.existsSync(
 );
 const initials = skill.name.split(' ').map((w) => w[0]).join('').slice(0, 2);
 ---
-<a class="mod" href={`/${skill.slug}`}>
+<a class="mod" href={localizeHref(`/${skill.slug}`, Astro.currentLocale)}>
   <span class="screen">
     {hasVideo ? (
       <video autoplay muted loop playsinline preload="metadata" aria-hidden="true"
@@ -26,11 +28,11 @@ const initials = skill.name.split(' ').map((w) => w[0]).join('').slice(0, 2);
   <span class="mod-body">
     <span class="mod-id">
       <span>~/skills/<b>{skill.slug}</b></span>
-      {skill.status !== 'stable' && <span>Beta</span>}
+      {skill.status !== 'stable' && <span>{t.beta}</span>}
     </span>
     <h3>{skill.name}</h3>
     <p>{skill.tagline}</p>
-    <span class="sig">{skill.triggers.slice(0, 3).map((t) => <span>{t}</span>)}</span>
-    <span class="more mono"><span>Details ansehen</span><i aria-hidden="true">↗</i></span>
+    <span class="sig">{skill.triggers.slice(0, 3).map((tr) => <span>{tr}</span>)}</span>
+    <span class="more mono"><span>{t.details}</span><i aria-hidden="true">↗</i></span>
   </span>
 </a>

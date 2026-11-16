@@ -245,3 +245,11 @@ code.inl{font:400 13px var(--mono);color:var(--paper)}
 /* Detail crumbs: on narrow screens the badge row drops below the back link. */
 .crumbs a{white-space:nowrap}
 @media (max-width:640px){.crumbs{flex-wrap:wrap;gap:8px 16px}.tagbox{overflow-wrap:anywhere}}
+
+/* Language switch DE / EN in the header: current language plain, the other one a link. */
+.lang{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.lang-sep{color:var(--faint)}
+.lang-current{color:var(--paper)}
+.nav .lang a{padding:0 2px}
+.nav .lang a:is(:hover,:focus-visible){color:var(--orange)}
+@media (max-width:640px){.nav{gap:16px}}

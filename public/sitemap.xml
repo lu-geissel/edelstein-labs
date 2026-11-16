@@ -1,7 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://labs.edelsteinstrategie.de/</loc><priority>1.0</priority></url>
-  <url><loc>https://labs.edelsteinstrategie.de/brand-design-studio</loc><priority>0.8</priority></url>
-  <url><loc>https://labs.edelsteinstrategie.de/video-script-writer</loc><priority>0.8</priority></url>
-  <url><loc>https://labs.edelsteinstrategie.de/brand-strategist</loc><priority>0.8</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://labs.edelsteinstrategie.de/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://labs.edelsteinstrategie.de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://labs.edelsteinstrategie.de/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://labs.edelsteinstrategie.de/"/>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://labs.edelsteinstrategie.de/en</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://labs.edelsteinstrategie.de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://labs.edelsteinstrategie.de/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://labs.edelsteinstrategie.de/"/>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://labs.edelsteinstrategie.de/brand-design-studio</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://labs.edelsteinstrategie.de/brand-design-studio"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://labs.edelsteinstrategie.de/en/brand-design-studio"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://labs.edelsteinstrategie.de/brand-design-studio"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://labs.edelsteinstrategie.de/en/brand-design-studio</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://labs.edelsteinstrategie.de/brand-design-studio"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://labs.edelsteinstrategie.de/en/brand-design-studio"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://labs.edelsteinstrategie.de/brand-design-studio"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://labs.edelsteinstrategie.de/video-script-writer</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://labs.edelsteinstrategie.de/video-script-writer"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://labs.edelsteinstrategie.de/en/video-script-writer"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://labs.edelsteinstrategie.de/video-script-writer"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://labs.edelsteinstrategie.de/en/video-script-writer</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://labs.edelsteinstrategie.de/video-script-writer"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://labs.edelsteinstrategie.de/en/video-script-writer"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://labs.edelsteinstrategie.de/video-script-writer"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://labs.edelsteinstrategie.de/brand-strategist</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://labs.edelsteinstrategie.de/brand-strategist"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://labs.edelsteinstrategie.de/en/brand-strategist"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://labs.edelsteinstrategie.de/brand-strategist"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://labs.edelsteinstrategie.de/en/brand-strategist</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://labs.edelsteinstrategie.de/brand-strategist"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://labs.edelsteinstrategie.de/en/brand-strategist"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://labs.edelsteinstrategie.de/brand-strategist"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://labs.edelsteinstrategie.de/voiceprint</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://labs.edelsteinstrategie.de/voiceprint"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://labs.edelsteinstrategie.de/en/voiceprint"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://labs.edelsteinstrategie.de/voiceprint"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://labs.edelsteinstrategie.de/en/voiceprint</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://labs.edelsteinstrategie.de/voiceprint"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://labs.edelsteinstrategie.de/en/voiceprint"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://labs.edelsteinstrategie.de/voiceprint"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://labs.edelsteinstrategie.de/linkedin-content-creation</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://labs.edelsteinstrategie.de/linkedin-content-creation"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://labs.edelsteinstrategie.de/en/linkedin-content-creation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://labs.edelsteinstrategie.de/linkedin-content-creation"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://labs.edelsteinstrategie.de/en/linkedin-content-creation</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://labs.edelsteinstrategie.de/linkedin-content-creation"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://labs.edelsteinstrategie.de/en/linkedin-content-creation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://labs.edelsteinstrategie.de/linkedin-content-creation"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://labs.edelsteinstrategie.de/jour-fixe</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://labs.edelsteinstrategie.de/jour-fixe"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://labs.edelsteinstrategie.de/en/jour-fixe"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://labs.edelsteinstrategie.de/jour-fixe"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://labs.edelsteinstrategie.de/en/jour-fixe</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://labs.edelsteinstrategie.de/jour-fixe"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://labs.edelsteinstrategie.de/en/jour-fixe"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://labs.edelsteinstrategie.de/jour-fixe"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://labs.edelsteinstrategie.de/session-handoff</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://labs.edelsteinstrategie.de/session-handoff"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://labs.edelsteinstrategie.de/en/session-handoff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://labs.edelsteinstrategie.de/session-handoff"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://labs.edelsteinstrategie.de/en/session-handoff</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://labs.edelsteinstrategie.de/session-handoff"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://labs.edelsteinstrategie.de/en/session-handoff"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://labs.edelsteinstrategie.de/session-handoff"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://labs.edelsteinstrategie.de/fable-prompter</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://labs.edelsteinstrategie.de/fable-prompter"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://labs.edelsteinstrategie.de/en/fable-prompter"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://labs.edelsteinstrategie.de/fable-prompter"/>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://labs.edelsteinstrategie.de/en/fable-prompter</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://labs.edelsteinstrategie.de/fable-prompter"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://labs.edelsteinstrategie.de/en/fable-prompter"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://labs.edelsteinstrategie.de/fable-prompter"/>
+    <priority>0.8</priority>
+  </url>
 </urlset>

@@ -1,22 +1,26 @@
 ---
 import { MAIN_SITE, GITHUB_REPO_URL } from '../data/skills';
+import { texts, fill, localizeHref } from '../i18n';
 const year = 2026;
+const locale = Astro.currentLocale;
+const common = texts('common', locale);
+const t = common.footer;
 ---
 <footer class="ftr">
   <div class="wrap">
     <div>
-      <a class="lockup" href="/" aria-label="Edelstein Labs – Startseite">
-        <img src="/brand/edelstein-wordmark.svg" alt="Edelstein" width="60" height="33" />
-        <span class="mono">Labs</span>
+      <a class="lockup" href={localizeHref('/', locale)} aria-label={common.header.logoHome}>
+        <img src="/brand/edelstein-wordmark.svg" alt={common.header.logoAlt} width="60" height="33" />
+        <span class="mono">{common.header.badge}</span>
       </a>
-      <p>Selbstgebaute AI-Skills für Marken- und Content-Arbeit. Kostenlos, out-of-the-box, ohne Interna.</p>
+      <p>{t.description}</p>
     </div>
-    <nav class="mono" aria-label="Footer">
-      <a href={MAIN_SITE}>Edelstein ↗</a>
-      <a href={GITHUB_REPO_URL} target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a href={`${MAIN_SITE}/impressum`}>Impressum</a>
-      <a href={`${MAIN_SITE}/datenschutz`}>Datenschutz</a>
+    <nav class="mono" aria-label={t.label}>
+      <a href={common.site.mainSiteUrl}>{t.mainSite}</a>
+      <a href={GITHUB_REPO_URL} target="_blank" rel="noopener noreferrer">{t.github}</a>
+      <a href={`${MAIN_SITE}/impressum`}>{t.imprint}</a>
+      <a href={`${MAIN_SITE}/datenschutz`}>{t.privacy}</a>
     </nav>
-    <p class="copy mono">© {year} Luis Geißelhardt · Edelstein Labs</p>
+    <p class="copy mono">{fill(t.copyright, { year })}</p>
   </div>
 </footer>

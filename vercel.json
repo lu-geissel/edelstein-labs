@@ -1,0 +1,30 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "has": [{ "type": "cookie", "key": "lang", "value": "en" }],
+      "destination": "/en",
+      "permanent": false
+    },
+    {
+      "source": "/:slug((?!(?:en|admin)(?:/|$))[a-z0-9-]+)",
+      "has": [{ "type": "cookie", "key": "lang", "value": "en" }],
+      "destination": "/en/:slug",
+      "permanent": false
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "header", "key": "accept-language", "value": "^(?!de)[a-zA-Z].*$" }],
+      "missing": [{ "type": "cookie", "key": "lang" }],
+      "destination": "/en",
+      "permanent": false
+    },
+    {
+      "source": "/:slug((?!(?:en|admin)(?:/|$))[a-z0-9-]+)",
+      "has": [{ "type": "header", "key": "accept-language", "value": "^(?!de)[a-zA-Z].*$" }],
+      "missing": [{ "type": "cookie", "key": "lang" }],
+      "destination": "/en/:slug",
+      "permanent": false
+    }
+  ]
+}

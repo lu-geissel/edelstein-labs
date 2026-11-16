@@ -1,0 +1,10 @@
+---
+import SkillView from '../../views/skill.astro';
+import { skillSlugs } from '../../data/skills';
+
+export function getStaticPaths() {
+  return skillSlugs.map((slug) => ({ params: { slug } }));
+}
+const { slug } = Astro.params;
+---
+<SkillView slug={slug} />

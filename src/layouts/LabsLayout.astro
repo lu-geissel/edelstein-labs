@@ -12,17 +12,23 @@ import '@fontsource/jetbrains-mono/latin-500.css';
 
 import LabsHeader from '../components/LabsHeader.astro';
 import LabsFooter from '../components/LabsFooter.astro';
+import { toLocale, pathFor } from '../i18n';
 
+// `path` is always the German path ("/" or "/<slug>"); the English path is derived from the current locale.
 interface Props {
   title: string;
   description: string;
-  canonical: string;
+  path: string;
 }
-const { title, description, canonical } = Astro.props;
+const { title, description, path } = Astro.props;
+const locale = toLocale(Astro.currentLocale);
+const origin = 'https://labs.edelsteinstrategie.de';
+const urlFor = (target: string) => `${origin}${target}`;
+const canonical = urlFor(pathFor(path, locale));
 const ogImage = 'https://labs.edelsteinstrategie.de/labs-og.png';
 ---
 <!doctype html>
-<html lang="de">
+<html lang={locale}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
@@ -32,6 +38,9 @@ const ogImage = 'https://labs.edelsteinstrategie.de/labs-og.png';
     <meta name="author" content="Luis Geißelhardt" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="de" href={urlFor(pathFor(path, 'de'))} />
+    <link rel="alternate" hreflang="en" href={urlFor(pathFor(path, 'en'))} />
+    <link rel="alternate" hreflang="x-default" href={urlFor(pathFor(path, 'de'))} />
     <meta name="theme-color" content="#0f0f0d" />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -42,7 +51,8 @@ const ogImage = 'https://labs.edelsteinstrategie.de/labs-og.png';
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImage} />
-    <meta property="og:locale" content="de_DE" />
+    <meta property="og:locale" content={locale === 'en' ? 'en_GB' : 'de_DE'} />
+    <meta property="og:locale:alternate" content={locale === 'en' ? 'de_DE' : 'en_GB'} />
     <meta property="og:site_name" content="Edelstein Labs" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />

@@ -1,0 +1,98 @@
+---
+/* Start page, rendered by src/pages/index.astro (German) and src/pages/en/index.astro (English). */
+import LabsLayout from '../layouts/LabsLayout.astro';
+import SkillCard from '../components/SkillCard.astro';
+import { getSkills, GITHUB_REPO_URL } from '../data/skills';
+import { texts, rich, plain, fill, localizeHref } from '../i18n';
+
+const locale = Astro.currentLocale;
+const t = texts('home', locale);
+const skills = getSkills(locale);
+
+const meta = {
+  title: t.meta.title,
+  description: t.meta.description,
+  path: '/',
+};
+
+const triggers = [...new Set(skills.flatMap((s) => s.triggers))];
+
+const ctaCalendly = 'https://calendly.com/luis-edelsteinstrategie/edelstein-intro-call';
+
+const skillCount = t.skills.numberWords[skills.length] ?? String(skills.length);
+const skillsHeading = fill(t.skills.heading, { count: skillCount });
+---
+<LabsLayout {...meta}>
+  <!-- Hero: dot-matrix field with the wordmark's slash as a sweeping signal -->
+  <section class="hero">
+    <canvas class="field" aria-hidden="true"></canvas>
+    <div class="coords mono" aria-hidden="true">
+      <span>{t.hero.coordsLeft}</span><span class="hide-s">{t.hero.coordsMiddle}</span><span><span class="led"></span> {t.hero.live}</span>
+    </div>
+    <div class="wrap">
+      <div>
+        <h1 set:html={rich(t.hero.heading)} />
+        <p class="hero-lead">{t.hero.lead}</p>
+        <div class="btns">
+          <a class="btn btn--o" href={localizeHref('#skills', locale)}>{t.hero.primary} <span aria-hidden="true">↓</span></a>
+          <a class="btn btn--line" href={GITHUB_REPO_URL} target="_blank" rel="noopener noreferrer">{t.hero.secondary} <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <aside class="readout" aria-label={plain(t.readout.label)}>
+        <div class="readout-head mono"><span>{t.readout.title}</span><span class="led"></span></div>
+        <dl>
+          <div><dt class="mono">{t.readout.skills}</dt><dd>{skills.length}</dd></div>
+          <div><dt class="mono">{t.readout.triggers}</dt><dd>{triggers.length}</dd></div>
+          <div><dt class="mono">{t.readout.price}</dt><dd>0<small>{t.readout.currency}</small></dd></div>
+          <div><dt class="mono">{t.readout.start}</dt><dd>&lt;5<small>{t.readout.minutes}</small></dd></div>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  <section class="sec" id="skills">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><h2 set:html={rich(skillsHeading)} /></div>
+        <p class="support">{t.skills.support}</p>
+      </div>
+      <div class="mods">
+        {skills.map((skill) => <SkillCard skill={skill} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="sec why">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><h2 set:html={rich(t.why.heading)} /></div>
+        <div class="why-intro">{t.why.intro.map((p) => <p>{p}</p>)}</div>
+      </div>
+      <div class="sn">
+        <div class="noise">
+          <h3><span>{t.why.skillTitle}</span><span>{t.why.skillTag}</span></h3>
+          <ul>{t.why.skill.map((i) => <li>{i}</li>)}</ul>
+        </div>
+        <div class="signal">
+          <h3><span>{t.why.humanTitle}</span><span class="o">{t.why.humanTag}</span></h3>
+          <ul>{t.why.human.map((i) => <li>{i}</li>)}</ul>
+        </div>
+      </div>
+      <div class="why-out">{t.why.outro.map((p) => <p>{p}</p>)}</div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <span class="slash" aria-hidden="true">/</span>
+    <div class="wrap">
+      <h2>{t.cta.heading}</h2>
+      <div class="cta-row">
+        <p>{t.cta.text}</p>
+        <div>
+          <a class="btn btn--o" href={ctaCalendly} target="_blank" rel="noopener noreferrer">{t.cta.button} <span aria-hidden="true">→</span></a>
+          <p class="note mono">{t.cta.note}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</LabsLayout>

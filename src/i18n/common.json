@@ -1,0 +1,64 @@
+{
+  "de": {
+    "site": {
+      "mainSiteUrl": "https://edelsteinstrategie.de"
+    },
+    "header": {
+      "logoHome": "Edelstein Labs – Startseite",
+      "logoAlt": "Edelstein",
+      "badge": "Labs",
+      "main": "Hauptnavigation",
+      "skills": "Skills",
+      "github": "GitHub",
+      "mainSite": "Edelstein ↗"
+    },
+    "footer": {
+      "description": "Selbstgebaute AI-Skills für Marken- und Content-Arbeit. Kostenlos, out-of-the-box, ohne Interna.",
+      "label": "Footer",
+      "mainSite": "Edelstein ↗",
+      "github": "GitHub",
+      "imprint": "Impressum",
+      "privacy": "Datenschutz",
+      "copyright": "© {year} Luis Geißelhardt · Edelstein Labs"
+    },
+    "language": {
+      "label": "Sprache",
+      "switchTo": "Auf Englisch lesen"
+    },
+    "badge": {
+      "title": "Diese Skills laufen in Claude – ohne Verbindung zu Anthropic.",
+      "text": "Works with Claude"
+    }
+  },
+  "en": {
+    "site": {
+      "mainSiteUrl": "https://edelsteinstrategie.de/en"
+    },
+    "header": {
+      "logoHome": "Edelstein Labs – home",
+      "logoAlt": "Edelstein",
+      "badge": "Labs",
+      "main": "Main navigation",
+      "skills": "Skills",
+      "github": "GitHub",
+      "mainSite": "Edelstein ↗"
+    },
+    "footer": {
+      "description": "AI skills I built myself for brand and content work. Free, ready out of the box, no client internals.",
+      "label": "Footer",
+      "mainSite": "Edelstein ↗",
+      "github": "GitHub",
+      "imprint": "Legal notice (German)",
+      "privacy": "Privacy policy (German)",
+      "copyright": "© {year} Luis Geißelhardt · Edelstein Labs"
+    },
+    "language": {
+      "label": "Language",
+      "switchTo": "Read in German"
+    },
+    "badge": {
+      "title": "These skills run in Claude – with no affiliation to Anthropic.",
+      "text": "Works with Claude"
+    }
+  }
+}

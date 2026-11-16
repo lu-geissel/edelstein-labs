@@ -1,0 +1,136 @@
+{
+  "de": {
+    "meta": {
+      "title": "{name} · Edelstein Labs",
+      "description": "{subheading} Kostenloser Claude-Skill zum Herunterladen, mit Anleitung für claude.ai und Claude Code."
+    },
+    "card": {
+      "details": "Details ansehen",
+      "beta": "Beta"
+    },
+    "nav": {
+      "back": "← Alle Skills"
+    },
+    "actions": {
+      "note": "Wichtig",
+      "download": "Skill herunterladen",
+      "github": "Auf GitHub",
+      "extra": "Dieses Plugin bündelt mehrere Skills. Für claude.ai zusätzlich laden:"
+    },
+    "sections": {
+      "problem": "Das Problem",
+      "how": "So funktioniert’s",
+      "step": "Schritt {n}",
+      "sample": "Beispiel-Ausgabe",
+      "why": "Warum ich das gebaut habe",
+      "builtFor": "Built for"
+    },
+    "install": {
+      "title": "Installation",
+      "platforms": "claude.ai · Claude Code",
+      "claudeAi": "claude.ai",
+      "claudeAiText": "Die `.skill`-Datei herunterladen und im Claude-Projekt unter **Skills** hochladen.",
+      "claudeCode": "Claude Code",
+      "marketplace": "Variante a) Plugin-Marketplace:",
+      "manual": "Variante b) Manuell:",
+      "copy": "kopieren",
+      "copied": "kopiert",
+      "noClaude": "**Kein Claude?** Die `SKILL.md` ist einfach Markdown. Kopier ihren Inhalt in ChatGPT, Gemini oder ein beliebiges anderes LLM – funktioniert genauso."
+    },
+    "preview": {
+      "brandProfile": "Brand Profile",
+      "extracted": "Extrahiert",
+      "strategyGuide": "Brand Strategy Guide",
+      "done": "Fertig",
+      "voiceFile": "VOICE.md",
+      "samples": "{count} Proben",
+      "running": "Läuft",
+      "prompt": "Prompt",
+      "optimised": "Optimiert",
+      "draft": "Entwurf",
+      "graphLabel": "Strategie-Bausteine: {steps}",
+      "headline": "Headline",
+      "body": "Body",
+      "voiceover": "Sprechertext",
+      "animation": "Animation",
+      "words": "{count} Wörter",
+      "substance": "Substance",
+      "positioning": "Positioning",
+      "dna": "Voice DNA",
+      "uses": "Nutzt",
+      "avoids": "Vermeidet",
+      "waiting": "wartet",
+      "ok": "ok",
+      "before": "Vorher",
+      "after": "Nachher",
+      "openQuestion": "Offene Frage"
+    }
+  },
+  "en": {
+    "meta": {
+      "title": "{name} · Edelstein Labs",
+      "description": "{subheading} A free Claude skill to download, with instructions for claude.ai and Claude Code."
+    },
+    "card": {
+      "details": "See details",
+      "beta": "Beta"
+    },
+    "nav": {
+      "back": "← All skills"
+    },
+    "actions": {
+      "note": "Important",
+      "download": "Download skill",
+      "github": "On GitHub",
+      "extra": "This plugin bundles several skills. For claude.ai, also download:"
+    },
+    "sections": {
+      "problem": "The problem",
+      "how": "How it works",
+      "step": "Step {n}",
+      "sample": "Sample output",
+      "why": "Why I built this",
+      "builtFor": "Built for"
+    },
+    "install": {
+      "title": "Installation",
+      "platforms": "claude.ai · Claude Code",
+      "claudeAi": "claude.ai",
+      "claudeAiText": "Download the `.skill` file and upload it in your Claude project under **Skills**.",
+      "claudeCode": "Claude Code",
+      "marketplace": "Option a) Plugin marketplace:",
+      "manual": "Option b) Manually:",
+      "copy": "copy",
+      "copied": "copied",
+      "noClaude": "**No Claude?** The `SKILL.md` is plain Markdown. Paste its contents into ChatGPT, Gemini or any other LLM – it works just the same."
+    },
+    "preview": {
+      "brandProfile": "Brand Profile",
+      "extracted": "Extracted",
+      "strategyGuide": "Brand Strategy Guide",
+      "done": "Done",
+      "voiceFile": "VOICE.md",
+      "samples": "{count} samples",
+      "running": "Running",
+      "prompt": "Prompt",
+      "optimised": "Optimised",
+      "draft": "Draft",
+      "graphLabel": "Strategy building blocks: {steps}",
+      "headline": "Headline",
+      "body": "Body",
+      "voiceover": "Voiceover",
+      "animation": "Animation",
+      "words": "{count} words",
+      "substance": "Substance",
+      "positioning": "Positioning",
+      "dna": "Voice DNA",
+      "uses": "Uses",
+      "avoids": "Avoids",
+      "waiting": "waiting",
+      "ok": "ok",
+      "before": "Before",
+      "after": "After",
+      "openQuestion": "Open question"
+    }
+  }
+}

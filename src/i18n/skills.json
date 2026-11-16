@@ -1,0 +1,650 @@
+{
+  "de": {
+    "brand-design-studio": {
+      "tagline": "Aus Brand-Material wird konsistentes Design – in jedem Format.",
+      "subheading": "Markenrichtlinien aus PDF, Website, Bild oder Text extrahieren und auf jedes Output-Format anwenden.",
+      "bullets": [
+        "Extrahiert Farben, Fonts, Tonalität und Persönlichkeit aus beliebigen Quellen",
+        "Baut ein einheitliches Brand-Profil pro Session",
+        "Wendet es auf Social Posts, Decks, Dokumente, Web und mehr an"
+      ],
+      "problem": "Jedes neue Asset bedeutet, Farben, Fonts und Stil wieder neu zusammenzusuchen. Die Marke franst aus, je mehr Hände und Tools beteiligt sind.",
+      "howItWorks": [
+        {
+          "title": "Installieren",
+          "body": "Skill herunterladen und in deinem AI-Assistenten einbinden (siehe unten)."
+        },
+        {
+          "title": "Brand-Material geben",
+          "body": "Style-Guide-PDF, Website-URL, Logo oder eine kurze Beschreibung reinwerfen. Der Skill extrahiert ein Brand-Profil."
+        },
+        {
+          "title": "Output anfordern",
+          "body": "Post, Deck, Dokument oder Grafik anfordern – on-brand, in den richtigen Maßen."
+        }
+      ],
+      "whyBuilt": "Ich baue ständig Assets für unterschiedliche Marken. Statt jedes Mal von vorn anzufangen, sollte ein Skill das Brand-Profil einmal sauber erfassen und konsistent anwenden.",
+      "builtFor": [
+        "Jedes LLM – Claude, ChatGPT, Gemini & Co.",
+        "Python-Extraktionsscripts (PDF, Website, Bild)",
+        "Referenz-Guides für Output-Formate"
+      ],
+      "sampleOutput": "{\n  \"brand_profile\": {\n    \"colors\": {\n      \"primary\": \"#211E1A\",\n      \"secondary\": \"#F2F0EB\",\n      \"accent\": \"#FF3B18\"\n    },\n    \"fonts\": {\n      \"headline\": \"Playfair Display\",\n      \"body\": \"Inter\"\n    },\n    \"tone\": [\"präzise\", \"editorial\", \"selbstsicher\"]\n  }\n}",
+      "preview": {
+        "tones": [
+          "präzise",
+          "editorial",
+          "selbstsicher"
+        ]
+      }
+    },
+    "video-script-writer": {
+      "tagline": "Produktionsreife Skripte für animierte Erklär- und Werbevideos.",
+      "subheading": "Ein 5-Phasen-Workflow vom Briefing bis zum fertigen, formatierten Skript-Dokument.",
+      "bullets": [
+        "Wählt das passende Story-Framework (PAS, StoryBrand, AIDA, ...)",
+        "Drei Quality-Passes: technisch, strategisch, kreativ",
+        "Gibt ein fertiges Template-Dokument aus"
+      ],
+      "problem": "Ein gutes Video-Skript muss in Wortzahl, Timing und Hook exakt sitzen. Das von Hand sauber zu halten kostet Stunden und bricht bei jeder Korrekturschleife.",
+      "howItWorks": [
+        {
+          "title": "Installieren",
+          "body": "Skill herunterladen und in deinem AI-Assistenten einbinden."
+        },
+        {
+          "title": "Briefing geben",
+          "body": "Produkt, Zielgruppe, Länge und Ton angeben. Der Skill analysiert und wählt ein Framework."
+        },
+        {
+          "title": "Skript erhalten",
+          "body": "Szene-für-Szene-Skript mit Sprechertext und Animation, nach drei Quality-Passes, als fertiges Dokument."
+        }
+      ],
+      "whyBuilt": "Ich schreibe seit Jahren Skripte für animierte Videos. Den immer gleichen Qualitätsprozess habe ich in einen Skill gegossen, damit der Entwurf schon mit sitzendem Hook und korrekter Wortzahl ankommt.",
+      "builtFor": [
+        "Jedes LLM – Claude, ChatGPT, Gemini & Co.",
+        "python-docx Template-Script",
+        "Beispiel-Briefings als Referenz"
+      ],
+      "sampleOutput": "SZENE 1 (0:00–0:06)\n\nSprechertext:\n\"Du hast die beste Technik im Raum. Nur weiß es niemand.\"\n\nAnimation:\nKamera fährt langsam über ein leeres Büro. Ein\neinzelnes Display leuchtet auf, der Rest bleibt dunkel.",
+      "preview": {
+        "scene": "SZENE 1",
+        "voiceover": "Du hast die beste Technik im Raum. Nur weiß es niemand.",
+        "animation": "Kamera fährt über ein leeres Büro. Ein einzelnes Display leuchtet auf."
+      }
+    },
+    "brand-strategist": {
+      "tagline": "Strategischer Marken-Berater: von der Substanz bis zur Botschaft.",
+      "subheading": "Eine strukturierte Methodik für Brand Substance, Positionierung, Persona, Messaging, Storytelling und Naming.",
+      "bullets": [
+        "Deckt den ganzen Strategie-Stack: Substanz, Positionierung, Persona, Messaging",
+        "Strukturierte, nachvollziehbare Methodik statt Bauchgefühl",
+        "Produziert einen vollständigen Brand Strategy Guide"
+      ],
+      "problem": "Markenstrategie bleibt oft vage. Es fehlt der strukturierte Weg von den Werten eines Unternehmens zu einer konkreten, tragfähigen Botschaft.",
+      "howItWorks": [
+        {
+          "title": "Installieren",
+          "body": "Skill herunterladen und in deinem AI-Assistenten einbinden."
+        },
+        {
+          "title": "Briefing oder Kontext geben",
+          "body": "Unternehmen, Markt und Ziel beschreiben. Der Skill führt strukturiert durch die Strategie-Bausteine."
+        },
+        {
+          "title": "Strategy Guide erhalten",
+          "body": "Von Brand Substance über Positionierung bis Messaging und Naming – als zusammenhängender Brand Strategy Guide."
+        }
+      ],
+      "whyBuilt": "Markenstrategie ist mein Kerngeschäft. Diesen Skill nutze ich, um den Strategie-Prozess strukturiert und reproduzierbar zu machen, ohne dass die Substanz verloren geht.",
+      "builtFor": [
+        "Jedes LLM – Claude, ChatGPT, Gemini & Co.",
+        "Strukturierte Referenz-Guides je Strategie-Baustein",
+        "Anonymisierte Beispiel-Outputs"
+      ],
+      "sampleOutput": "BRAND SUBSTANCE\nKern: Verantwortung übernehmen, bevor sie\nformal übertragen ist.\n\nPOSITIONING STATEMENT\nFür Tech-Mittelständler im DACH-Raum, die\nfachlich stark, aber kommunikativ unsichtbar\nsind, ist [Marke] der Partner, der aus\nSubstanz eine tragfähige Botschaft macht.",
+      "preview": {
+        "substance": "Verantwortung übernehmen, bevor sie formal übertragen ist.",
+        "positioning": "Für Tech-Mittelständler im DACH-Raum, die fachlich stark, aber kommunikativ unsichtbar sind."
+      }
+    },
+    "voiceprint": {
+      "tagline": "Schreib mit AI in deiner eigenen Stimme – erkennbar, in jedem Chat.",
+      "subheading": "Aus deinen echten Texten wird ein VOICE.md. Jede AI liest es vor dem Schreiben und klingt danach nach dir.",
+      "bullets": [
+        "Deine Texte klingen nach dir – erkennbar, in jedem Chat und in jedem Tool",
+        "Schluss mit AI-Slop: die verräterischen Floskeln stehen auf einer Bannliste",
+        "Einmal erstellt, überall gelesen – du erklärst deinen Stil nie wieder im Prompt",
+        "Wird mit jeder Korrektur besser, statt bei jedem neuen Chat bei null anzufangen"
+      ],
+      "problem": "AI-Texte klingen nach AI. Immer dieselben Floskeln, derselbe Rhythmus, dieselben Dreiklänge – Leser merken das inzwischen. Und du tippst in jedem neuen Chat aufs Neue \"schreib in meinem Stil\", ohne je gesagt zu haben, was das eigentlich heißt. Das Ergebnis: Texte, die du vor dem Absenden ohnehin umschreibst.",
+      "howItWorks": [
+        {
+          "title": "Installieren",
+          "body": "Skill herunterladen und in deinem AI-Assistenten einbinden (siehe unten)."
+        },
+        {
+          "title": "Texte geben",
+          "body": "Mindestens 3, ideal 10+ Texte, die du selbst geschrieben hast – Mails, Posts, Angebote. Gemischte Formate sind besser als ein einziges. Der Skill analysiert Rhythmus, Wortschatz, Eigenheiten und deine No-Gos, jeweils mit Belegzitat aus deinem Material."
+        },
+        {
+          "title": "VOICE.md bekommen und benutzen",
+          "body": "Der Skill schreibt eine Probe in deiner Stimme und stellt sie neben deine Originale – du siehst sofort, ob es sitzt. Danach liegt das Profil als eine Datei in deinem Projekt: Jede AI, die sie liest, schreibt ab da wie du."
+        }
+      ],
+      "whyBuilt": "Ich schreibe für mehrere Marken plus mich selbst. Prompt-Imitation driftet – ein geschriebenes Profil nicht. Es ist überprüfbar, versionierbar, und jede Korrektur, die du machst, wandert zurück hinein. Nach drei Runden schreibt die AI Entwürfe, an denen du nichts mehr glattziehst.",
+      "builtFor": [
+        "Jedes LLM – Claude, ChatGPT, Gemini & Co.",
+        "Eine einzige Datei, die überall gelesen wird",
+        "Greift direkt in LinkedIn Content Creation"
+      ],
+      "sampleOutput": "## Voice DNA\nKurze Aussagesätze, konkrete Zahlen, trockener\nHumor, null Konzern-Polster.\n\n## Lexikon\n### Nutzt\n- \"liefern\" (statt \"bereitstellen\")\n### Vermeidet\n- \"spannend\", \"Mehrwert\", \"abholen\"\n\n## Klingt falsch (plausibel für eine AI, fremd für dich)\n- \"Lass uns tief eintauchen.\"",
+      "preview": {
+        "dna": "Kurze Aussagesätze, konkrete Zahlen, trockener Humor, null Konzern-Polster.",
+        "uses": [
+          "liefern",
+          "kostet",
+          "konkret"
+        ],
+        "avoids": [
+          "Mehrwert",
+          "spannend",
+          "abholen"
+        ]
+      }
+    },
+    "linkedin-content-creation": {
+      "tagline": "Die Sprachnotiz von heute Morgen wird ein Post, den du unterschreiben kannst.",
+      "subheading": "Erst der Winkel, dann der Text – und dazwischen entscheidest du. Hook zuerst, jede Zahl markiert, Edit-Pass mit frischem Blick.",
+      "bullets": [
+        "Dein Rohmaterial wird verwertet, statt liegen zu bleiben: Sprachnotiz, Video, PDF, Link",
+        "Du entscheidest zweimal – nichts läuft ohne dein Wort durch bis zum fertigen Text",
+        "Keine erfundenen Belege: jede Zahl im Draft trägt einen Faktencheck-Marker",
+        "Kein Recycling deiner eigenen Formulierungen – jeder Post bekommt eigene Textur"
+      ],
+      "problem": "Der Rohstoff für gute Posts liegt längst da: in Sprachnotizen, Calls, PDFs. Was daraus wird, ist meistens generisch oder eine Woche zu spät. Und lässt man die AI einfach durchlaufen, steht am Ende ein Text, den so niemand freigegeben hätte – mit Zahlen, die niemand geprüft hat.",
+      "howItWorks": [
+        {
+          "title": "Installieren",
+          "body": "Skill herunterladen und in deinem AI-Assistenten einbinden. Enthält zwei Skills: den Ablauf und die Schreib-Engine."
+        },
+        {
+          "title": "Material reinwerfen",
+          "body": "Sprachnotiz, Video, PDF, Link oder eine grobe Idee. Audio wird lokal transkribiert. Beim ersten Lauf richtet der Skill deinen linkedin/-Ordner gemeinsam mit dir ein."
+        },
+        {
+          "title": "Zweimal entscheiden",
+          "body": "Erst der Winkel, dann der Draft. An beiden Stellen stoppt der Skill und wartet auf dein Wort – du schärfst nach oder gibst frei. Deine Endfassung wird als eigene Version abgelegt: der Unterschied zwischen Entwurf und Endtext ist das, woraus der nächste Post lernt."
+        }
+      ],
+      "whyBuilt": "Ich schreibe Posts für Klienten und für mich. Das Problem war nie das Schreiben, sondern der Winkel und die Disziplin: nicht recyceln, nichts behaupten, was keiner geprüft hat, und den Draft nicht überschreiben – weil die Differenz zwischen Entwurf und Endfassung das Einzige ist, woraus das System lernt.",
+      "builtFor": [
+        "Claude Code und claude.ai",
+        "Lokale Transkription via ffmpeg + Whisper",
+        "Liest das VOICE.md aus Voiceprint"
+      ],
+      "sampleOutput": "HOOKS (6 Kandidaten, ★ = Empfehlung)\n\n★ 2 · [Zahl] \"Drei Wochen Ausschreibung. Und dann\n  entscheidet der Preis.\"\n  3 · [Szene] \"Der Techniker stand um 6:40 vor\n  einer verschlossenen Tür.\"\n\n[FAKTENCHECK: 3 Wochen – mit Klient bestätigen]",
+      "preview": {
+        "label": "LinkedIn Post · 260730",
+        "steps": [
+          "Ingest",
+          "Angle",
+          "Freigabe",
+          "Draft",
+          "Freigabe"
+        ],
+        "note": "Wartet auf dein Wort. Der Skill schreibt den Draft nicht von selbst."
+      }
+    },
+    "jour-fixe": {
+      "tagline": "Die Stunde Meeting-Vorbereitung, die jede Woche wiederkommt – erledigt, bevor du dich hinsetzt.",
+      "subheading": "Zieht deine Quellen, gleicht die Vorwoche gegen das Ist ab und baut das Deck – erst nach deiner Freigabe.",
+      "bullets": [
+        "Du gehst vorbereitet rein: kein Zusammensuchen von Stunden, Tasks und letztem Deck mehr",
+        "Findet die Lücke vor dem Termin – jede Priorität ohne Fortschritt wird dir vorher zur Frage gestellt",
+        "Läuft mit deinen eigenen Quellen: Zeiterfassung, letztes Deck, Task-Board, mündliche Updates",
+        "Deck in deinem Format: Gamma, Markdown, Slide-Text oder Dokument"
+      ],
+      "problem": "Das wiederkehrende Meeting frisst jede Woche dieselbe Stunde: Quellen zusammensuchen, sich erinnern, was letzte Woche versprochen war, Slides bauen. Und der eine Punkt, zu dem es nichts zu berichten gibt, fällt dir erst im Termin auf – vor dem Kunden.",
+      "howItWorks": [
+        {
+          "title": "Installieren",
+          "body": "Skill herunterladen und in deinem AI-Assistenten einbinden."
+        },
+        {
+          "title": "Quellen eintragen",
+          "body": "Beim ersten Lauf fragt der Skill deine Quellen ab – Zeiterfassung, letztes Deck, Task-Board – und legt daraus eine Config an. Danach liest er sie jede Woche selbst."
+        },
+        {
+          "title": "Abgleichen, freigeben, erzeugen",
+          "body": "Erst der Abgleich mit offenen Fragen, dann der Slide-Entwurf im Chat. Das Deck entsteht erst nach deinem Wort."
+        }
+      ],
+      "whyBuilt": "Der Wert dieses Meetings hängt an einer einzigen Stelle: dem ehrlichen Abgleich zwischen dem, was geplant war, und dem, was passiert ist. Alles andere ist Formatierung. Also macht der Skill den Abgleich zuerst – und fragt nach, statt eine Lücke zu überspielen.",
+      "builtFor": [
+        "Claude Code und claude.ai",
+        "Gamma, Markdown, Slides oder Dokument",
+        "Beliebige Quellen via Integration oder Upload"
+      ],
+      "sampleOutput": "ABGLEICH ZUR VORWOCHE\n\n✓ Karriereseite – 4 Einträge, live seit Di\n✓ Meta Ads – Set B pausiert, CPA 41 €\n? Testimonials – kein Input in Stunden,\n  Board oder Updates.\n\n  → \"Letzte Woche als Priorität gesetzt. Update,\n     oder diese Woche nicht erwähnen?\"",
+      "preview": {
+        "cover": "KW 31 · 28.07.",
+        "slides": [
+          {
+            "title": "Wochenüberblick",
+            "body": "Vier Themenblöcke, zwei Entscheidungen offen."
+          },
+          {
+            "title": "Meta Ads",
+            "body": "Set B pausiert. CPA 41 €. Nächster Schritt: Creative-Test."
+          }
+        ],
+        "open": "Testimonials – kein Input. Nachfrage gesammelt."
+      }
+    },
+    "session-handoff": {
+      "tagline": "Gib deiner AI ein Gedächtnis: Was passiert ist, wo du stehst, warum du es so entschieden hast.",
+      "subheading": "Ab jetzt wird mitgeschrieben. Jede Session endet mit einem Stand, den die nächste liest – über /clear, Modellwechsel und Wochen Pause hinweg.",
+      "bullets": [
+        "Kein Wiedereinstieg aus dem Nichts mehr: die nächste Session weiß, wo ihr wart",
+        "Deine Entscheidungen und ihre Begründung überleben jedes /clear und jeden Modellwechsel",
+        "Der Stand bleibt lesbar: ein Dashboard auf einer Bildschirmseite, kein zugewuchertes Tagebuch",
+        "Kein Dienst, keine Datenbank, kein Abo – drei Markdown-Dateien in deinem eigenen Projekt"
+      ],
+      "problem": "AI-Sessions vergessen alles. Beim nächsten Öffnen erklärst du dein Projekt wieder von vorn – oder schlimmer: die AI trifft eine Entscheidung neu, die du vor drei Wochen schon getroffen und begründet hattest. Und wo mitgeschrieben wird, wächst die Status-Datei in Monaten zu einem Tagebuch, in dem der aktuelle Stand zwischen Erledigtem verschwindet.",
+      "howItWorks": [
+        {
+          "title": "Installieren",
+          "body": "Skill herunterladen und in deinem AI-Assistenten einbinden. Bringt den /handoff-Command mit."
+        },
+        {
+          "title": "Am Sessionende auslösen",
+          "body": "\"Handoff\" sagen oder /handoff tippen, solange der Kontext des Gesprächs noch lebt. Existiert die Struktur noch nicht, legt der Skill sie mit dir gemeinsam an."
+        },
+        {
+          "title": "Ab jetzt hat dein Projekt ein Gedächtnis",
+          "body": "Drei Dateien, die sich nie überschneiden: status.md sagt, wo du stehst. log.md, was passiert ist. decisions.md, warum du es so entschieden hast – und da schreibt der Skill nichts hinein, was du nicht vorher gelesen und freigegeben hast. Die nächste Session liest das und macht weiter."
+        }
+      ],
+      "whyBuilt": "Ich arbeite an mehreren Projekten parallel und selten zwei Tage am Stück am selben. Der teuerste Moment war immer der Wiedereinstieg – und die Fälle, in denen eine frische Session eine längst getroffene Entscheidung aufrollte, weil ihre Begründung nirgends stand. Dateien lösen das: sie überleben jeden Kontext-Reset und du kannst sie lesen, ohne ein Tool zu starten.",
+      "builtFor": [
+        "Claude Code (Skill + /handoff-Command)",
+        "Jedes Projekt mit Dateien – kein Dienst, keine Datenbank",
+        "Legt die Struktur auf Wunsch selbst an"
+      ],
+      "sampleOutput": "# Status — Projekt X\n> Last updated: 2026-07-30\n\n## Jetzt\n- Landingpage steht, Formular hängt am DNS.\n\n## Nächste Schritte\n1. DNS-Eintrag prüfen (bei Hoster, seit Di offen)\n\n## Blocker\n- Freigabe Bildrechte fehlt\n\n→ 6 erledigte Punkte nach log.md abgeflossen.",
+      "preview": {
+        "label": "Handoff · Projekt X",
+        "steps": [
+          "Session lesen",
+          "log.md",
+          "status.md",
+          "decisions.md"
+        ],
+        "note": "6 erledigte Punkte abgeflossen · status.md: 34 Zeilen · 1 Entscheidung zur Freigabe."
+      }
+    },
+    "fable-prompter": {
+      "tagline": "Denk mit Opus, arbeite mit Fable: ein Prompt, der präzise sitzt und Tokens spart.",
+      "subheading": "Lass Opus 5 aus deiner groben Idee den Prompt bauen und schick ihn in Fable 5 ab – die Rechenarbeit landet dort, wo sie hingehört.",
+      "bullets": [
+        "Spart Tokens und Runden: die Idee steht so präzise drin, dass Fable nicht raten und nachfragen muss",
+        "Nutzt aus, was Fable 5 anders macht – Ziel statt Schrittfolge, Initiative mit klaren Grenzen",
+        "Fertig zum Abschicken: kein Ausfüllfeld, keine eckigen Klammern, kein Nachbessern",
+        "Setzt Leitplanken, wo Eigeninitiative teuer wird – besonders in Cowork mit echten Dateien"
+      ],
+      "note": "Führ diesen Skill mit Opus 5 aus, nicht mit Fable 5. Opus baut den Prompt, Fable arbeitet ihn ab. Andersherum lässt du das teure Nachdenken vom Modell erledigen, das eigentlich nur ausführen sollte – und zahlst es in Tokens.",
+      "problem": "Ein vager Prompt kostet dich zwei Dinge: Runden und Tokens. Fable fragt nach, rät falsch, du korrigierst, es rechnet erneut. Dazu kommen die Prompt-Gewohnheiten von 2024, die heute aktiv schaden – durchnummerierte Schrittfolgen, Freigabe-Schleifen, \"denk Schritt für Schritt\". Sie machen das Ergebnis schlechter, nicht besser.",
+      "howItWorks": [
+        {
+          "title": "Installieren",
+          "body": "Skill herunterladen und in deinem AI-Assistenten einbinden."
+        },
+        {
+          "title": "Den Prompt von Opus 5 bauen lassen",
+          "body": "Führ diesen Skill mit Opus 5 aus, nicht mit Fable. Wirf eine grobe Idee rein, einen vagen Auftrag, einen Absatz Kontext – oder einen alten Prompt, der nicht mehr zieht. Opus denkt die Aufgabe durch und formuliert sie präzise aus."
+        },
+        {
+          "title": "Prompt in Fable 5 abschicken",
+          "body": "Ein einzelner Codeblock, fertig zum Kopieren – kein Vorwort, keine eckigen Klammern. Die Denkarbeit ist dann schon erledigt, Fable führt nur noch aus. Genau so nutzt du dein Token-Budget sinnvoll."
+        }
+      ],
+      "whyBuilt": "Ich habe zu viele Prompts gesehen, die aus lauter Vorsicht überstrukturiert waren und dadurch schlechter liefen. Und ich habe zu oft zugesehen, wie ein starkes Modell erst mal rät, was ich eigentlich will. Beides kostet Geld. Der Skill trennt die zwei Arbeiten sauber: Opus denkt, Fable macht.",
+      "builtFor": [
+        "Erstellen mit Opus 5 · Ausführen in Fable 5",
+        "Chat und Cowork – nicht für die API",
+        "Antwortet in der Sprache deiner Eingabe"
+      ],
+      "sampleOutput": "Vorher:\n\"Schritt 1: lies meine Notizen. Schritt 2: warte\nauf Freigabe. Schritt 3: schreib einen Entwurf…\"\n\nNachher:\n\"Mach aus meinen Notizen eine fertige Newsletter-\nAusgabe für Selbstständige, die am Handy überfliegen.\nFertig heißt: ~600 Wörter in meinem Ton, plus 5\nBetreffzeilen, deine Empfehlung zuerst.\"",
+      "preview": {
+        "before": "Schritt 1: lies meine Notizen. Schritt 2: warte auf Freigabe. Schritt 3: schreib einen Entwurf. Schritt 4: warte auf Freigabe…",
+        "after": "Mach aus meinen Notizen eine fertige Newsletter-Ausgabe. Fertig heißt: ~600 Wörter in meinem Ton, plus 5 Betreffzeilen, deine Empfehlung zuerst."
+      }
+    }
+  },
+  "en": {
+    "brand-design-studio": {
+      "tagline": "Turns brand material into consistent design – in any format.",
+      "subheading": "Pull brand guidelines out of a PDF, website, image or text and apply them to any output format.",
+      "bullets": [
+        "Extracts colours, fonts, tone and personality from any source",
+        "Builds one consistent brand profile per session",
+        "Applies it to social posts, decks, documents, web and more"
+      ],
+      "problem": "Every new asset means hunting down colours, fonts and style all over again. The more hands and tools involved, the more the brand frays at the edges.",
+      "howItWorks": [
+        {
+          "title": "Install",
+          "body": "Download the skill and add it to your AI assistant (see below)."
+        },
+        {
+          "title": "Hand over brand material",
+          "body": "Drop in a style guide PDF, a website URL, a logo or a short description. The skill extracts a brand profile."
+        },
+        {
+          "title": "Ask for output",
+          "body": "Ask for a post, deck, document or graphic – on brand, in the right dimensions."
+        }
+      ],
+      "whyBuilt": "I build assets for different brands all the time. Instead of starting from scratch every time, I wanted a skill that captures the brand profile properly once and applies it consistently.",
+      "builtFor": [
+        "Any LLM – Claude, ChatGPT, Gemini & co.",
+        "Python extraction scripts (PDF, website, image)",
+        "Reference guides for output formats"
+      ],
+      "sampleOutput": "{\n  \"brand_profile\": {\n    \"colors\": {\n      \"primary\": \"#211E1A\",\n      \"secondary\": \"#F2F0EB\",\n      \"accent\": \"#FF3B18\"\n    },\n    \"fonts\": {\n      \"headline\": \"Playfair Display\",\n      \"body\": \"Inter\"\n    },\n    \"tone\": [\"precise\", \"editorial\", \"confident\"]\n  }\n}",
+      "preview": {
+        "tones": [
+          "precise",
+          "editorial",
+          "confident"
+        ]
+      }
+    },
+    "video-script-writer": {
+      "tagline": "Production-ready scripts for animated explainer and promo videos.",
+      "subheading": "A five-phase workflow from brief to finished, formatted script document.",
+      "bullets": [
+        "Picks the right story framework (PAS, StoryBrand, AIDA, ...)",
+        "Three quality passes: technical, strategic, creative",
+        "Delivers a finished template document"
+      ],
+      "problem": "A good video script has to land exactly on word count, timing and hook. Keeping that clean by hand takes hours and falls apart with every round of edits.",
+      "howItWorks": [
+        {
+          "title": "Install",
+          "body": "Download the skill and add it to your AI assistant."
+        },
+        {
+          "title": "Give a brief",
+          "body": "Name the product, audience, length and tone. The skill analyses the brief and picks a framework."
+        },
+        {
+          "title": "Get the script",
+          "body": "A scene-by-scene script with voiceover and animation, after three quality passes, as a finished document."
+        }
+      ],
+      "whyBuilt": "I’ve been writing scripts for animated videos for years. I poured the quality process I always run into a skill, so the draft arrives with the hook in place and the word count right.",
+      "builtFor": [
+        "Any LLM – Claude, ChatGPT, Gemini & co.",
+        "python-docx template script",
+        "Sample briefs for reference"
+      ],
+      "sampleOutput": "SCENE 1 (0:00–0:06)\n\nVoiceover:\n\"You have the best tech in the room. Nobody knows it.\"\n\nAnimation:\nThe camera slowly pans across an empty office. A\nsingle screen lights up, the rest stays dark.",
+      "preview": {
+        "scene": "SCENE 1",
+        "voiceover": "You have the best tech in the room. Nobody knows it.",
+        "animation": "The camera pans across an empty office. A single screen lights up."
+      }
+    },
+    "brand-strategist": {
+      "tagline": "A strategic brand advisor: from substance to message.",
+      "subheading": "A structured method for brand substance, positioning, persona, messaging, storytelling and naming.",
+      "bullets": [
+        "Covers the whole strategy stack: substance, positioning, persona, messaging",
+        "A structured method you can follow instead of gut feeling",
+        "Produces a complete Brand Strategy Guide"
+      ],
+      "problem": "Brand strategy often stays vague. What’s missing is a structured path from a company’s values to a concrete message that holds up.",
+      "howItWorks": [
+        {
+          "title": "Install",
+          "body": "Download the skill and add it to your AI assistant."
+        },
+        {
+          "title": "Give a brief or context",
+          "body": "Describe the company, the market and the goal. The skill walks you through the strategy building blocks in a clear order."
+        },
+        {
+          "title": "Get the Strategy Guide",
+          "body": "From brand substance through positioning to messaging and naming – as one coherent Brand Strategy Guide."
+        }
+      ],
+      "whyBuilt": "Brand strategy is my core business. I use this skill to make the strategy process structured and repeatable without losing the substance.",
+      "builtFor": [
+        "Any LLM – Claude, ChatGPT, Gemini & co.",
+        "Structured reference guides for each strategy building block",
+        "Anonymised sample outputs"
+      ],
+      "sampleOutput": "BRAND SUBSTANCE\nCore: taking responsibility before it is\nformally handed over.\n\nPOSITIONING STATEMENT\nFor mid-sized tech companies in the DACH\nregion that are strong on expertise but\ninvisible in how they communicate, [Brand]\nis the partner that turns substance into\na message that holds.",
+      "preview": {
+        "substance": "Taking responsibility before it is formally handed over.",
+        "positioning": "For mid-sized tech companies in the DACH region that are strong on expertise but invisible in how they communicate."
+      }
+    },
+    "voiceprint": {
+      "tagline": "Write with AI in your own voice – recognisably you, in every chat.",
+      "subheading": "Your real writing becomes a VOICE.md. Every AI reads it before it writes – and then sounds like you.",
+      "bullets": [
+        "Your texts sound like you – recognisably, in every chat and every tool",
+        "No more AI slop: the giveaway phrases go on a ban list",
+        "Create it once, read everywhere – you never explain your style in a prompt again",
+        "Gets better with every correction instead of starting from zero in every new chat"
+      ],
+      "problem": "AI texts sound like AI. Always the same phrases, the same rhythm, the same groups of three – and readers notice by now. In every new chat you type \"write in my style\" again, without ever having said what that actually means. The result: texts you rewrite before sending anyway.",
+      "howItWorks": [
+        {
+          "title": "Install",
+          "body": "Download the skill and add it to your AI assistant (see below)."
+        },
+        {
+          "title": "Hand over your texts",
+          "body": "At least 3, ideally 10+ texts you wrote yourself – emails, posts, proposals. Mixed formats work better than a single one. The skill analyses rhythm, vocabulary, quirks and your no-gos, each backed by a quote from your material."
+        },
+        {
+          "title": "Get your VOICE.md and use it",
+          "body": "The skill writes a sample in your voice and puts it next to your originals – you see straight away whether it fits. After that the profile sits in your project as a single file: every AI that reads it writes like you from then on."
+        }
+      ],
+      "whyBuilt": "I write for several brands plus myself. Prompt imitation drifts – a written profile doesn’t. You can check it, version it, and every correction you make flows back into it. After three rounds the AI writes drafts you no longer need to smooth out.",
+      "builtFor": [
+        "Any LLM – Claude, ChatGPT, Gemini & co.",
+        "One single file that’s read everywhere",
+        "Feeds straight into LinkedIn Content Creation"
+      ],
+      "sampleOutput": "## Voice DNA\nShort declarative sentences, concrete numbers,\ndry humour, zero corporate padding.\n\n## Lexicon\n### Uses\n- \"ship\" (not \"provide\")\n### Avoids\n- \"exciting\", \"added value\", \"circle back\"\n\n## Sounds wrong (plausible for an AI, alien to you)\n- \"Let’s take a deep dive.\"",
+      "preview": {
+        "dna": "Short declarative sentences, concrete numbers, dry humour, zero corporate padding.",
+        "uses": [
+          "ship",
+          "costs",
+          "concrete"
+        ],
+        "avoids": [
+          "added value",
+          "exciting",
+          "circle back"
+        ]
+      }
+    },
+    "linkedin-content-creation": {
+      "tagline": "This morning’s voice memo becomes a post you can put your name to.",
+      "subheading": "The angle first, then the text – and you decide in between. Hook first, every number flagged, an edit pass with fresh eyes.",
+      "bullets": [
+        "Your raw material gets used instead of gathering dust: voice memo, video, PDF, link",
+        "You decide twice – nothing goes through to the finished text without your say-so",
+        "No invented evidence: every number in the draft carries a fact-check marker",
+        "No recycling of your own phrasing – every post gets its own texture"
+      ],
+      "problem": "The raw material for good posts is already there: in voice memos, calls, PDFs. What comes out of it is usually generic or a week too late. And if you just let the AI run, you end up with a text nobody would have signed off – with numbers nobody checked.",
+      "howItWorks": [
+        {
+          "title": "Install",
+          "body": "Download the skill and add it to your AI assistant. It contains two skills: the workflow and the writing engine."
+        },
+        {
+          "title": "Drop in material",
+          "body": "Voice memo, video, PDF, link or a rough idea. Audio is transcribed locally. On the first run, the skill sets up your linkedin/ folder together with you."
+        },
+        {
+          "title": "Decide twice",
+          "body": "First the angle, then the draft. At both points the skill stops and waits for your say-so – you sharpen or approve. Your final version is saved as a version of its own: the difference between draft and final text is what the next post learns from."
+        }
+      ],
+      "whyBuilt": "I write posts for clients and for myself. The problem was never the writing, but the angle and the discipline: don’t recycle, don’t claim anything nobody has checked, and don’t overwrite the draft – because the difference between draft and final version is the only thing the system learns from.",
+      "builtFor": [
+        "Claude Code and claude.ai",
+        "Local transcription via ffmpeg + Whisper",
+        "Reads the VOICE.md from Voiceprint"
+      ],
+      "sampleOutput": "HOOKS (6 candidates, ★ = recommended)\n\n★ 2 · [Number] \"Three weeks of tendering. And then\n  price decides.\"\n  3 · [Scene] \"At 6:40 the technician was standing\n  in front of a locked door.\"\n\n[FACT CHECK: 3 weeks – confirm with client]",
+      "preview": {
+        "label": "LinkedIn Post · 260730",
+        "steps": [
+          "Ingest",
+          "Angle",
+          "Approval",
+          "Draft",
+          "Approval"
+        ],
+        "note": "Waiting for your say-so. The skill won’t write the draft on its own."
+      }
+    },
+    "jour-fixe": {
+      "tagline": "The hour of meeting prep that comes back every week – done before you sit down.",
+      "subheading": "Pulls your sources, checks last week against what actually happened and builds the deck – only after you’ve approved it.",
+      "bullets": [
+        "You walk in prepared: no more scraping together hours, tasks and last week’s deck",
+        "Finds the gap before the meeting – every priority without progress comes to you as a question first",
+        "Runs on your own sources: time tracking, last deck, task board, verbal updates",
+        "Deck in your format: Gamma, Markdown, slide text or document"
+      ],
+      "problem": "The recurring meeting eats the same hour every week: gathering sources, remembering what was promised last week, building slides. And the one point with nothing to report only hits you in the meeting – in front of the client.",
+      "howItWorks": [
+        {
+          "title": "Install",
+          "body": "Download the skill and add it to your AI assistant."
+        },
+        {
+          "title": "Add your sources",
+          "body": "On the first run the skill asks for your sources – time tracking, last deck, task board – and creates a config from them. After that it reads them itself every week."
+        },
+        {
+          "title": "Check, approve, generate",
+          "body": "First the check with open questions, then the slide draft in the chat. The deck only gets built once you say so."
+        }
+      ],
+      "whyBuilt": "The value of this meeting hinges on a single point: the honest comparison between what was planned and what actually happened. Everything else is formatting. So the skill does the comparison first – and asks, instead of glossing over a gap.",
+      "builtFor": [
+        "Claude Code and claude.ai",
+        "Gamma, Markdown, slides or document",
+        "Any source via integration or upload"
+      ],
+      "sampleOutput": "CHECK AGAINST LAST WEEK\n\n✓ Careers page – 4 listings, live since Tue\n✓ Meta Ads – set B paused, CPA €41\n? Testimonials – no input in hours,\n  board or updates.\n\n  → \"Set as a priority last week. Update,\n     or leave it out this week?\"",
+      "preview": {
+        "cover": "Week 31 · 28 Jul",
+        "slides": [
+          {
+            "title": "Week at a glance",
+            "body": "Four topic blocks, two decisions open."
+          },
+          {
+            "title": "Meta Ads",
+            "body": "Set B paused. CPA €41. Next step: creative test."
+          }
+        ],
+        "open": "Testimonials – no input. Follow-up question noted."
+      }
+    },
+    "session-handoff": {
+      "tagline": "Give your AI a memory: what happened, where you stand, why you decided the way you did.",
+      "subheading": "From now on, things get written down. Every session ends with a status the next one reads – across /clear, model switches and weeks off.",
+      "bullets": [
+        "No more starting from nothing: the next session knows where you left off",
+        "Your decisions and the reasons behind them survive every /clear and every model switch",
+        "The status stays readable: a dashboard on one screen, not an overgrown diary",
+        "No service, no database, no subscription – three Markdown files in your own project"
+      ],
+      "problem": "AI sessions forget everything. Next time you open one, you explain your project from scratch – or worse: the AI makes a decision again that you already made and justified three weeks ago. And where things do get written down, the status file grows over the months into a diary in which the current state disappears among finished items.",
+      "howItWorks": [
+        {
+          "title": "Install",
+          "body": "Download the skill and add it to your AI assistant. It comes with the /handoff command."
+        },
+        {
+          "title": "Trigger it at the end of a session",
+          "body": "Say \"handoff\" or type /handoff while the conversation’s context is still alive. If the structure doesn’t exist yet, the skill sets it up with you."
+        },
+        {
+          "title": "From now on your project has a memory",
+          "body": "Three files that never overlap: status.md says where you stand. log.md, what happened. decisions.md, why you decided the way you did – and the skill writes nothing in there that you haven’t read and approved first. The next session reads it and carries on."
+        }
+      ],
+      "whyBuilt": "I work on several projects in parallel and rarely two days in a row on the same one. The most expensive moment was always getting back in – and the times a fresh session reopened a decision made long ago because its reasoning wasn’t written down anywhere. Files solve that: they survive every context reset, and you can read them without starting a tool.",
+      "builtFor": [
+        "Claude Code (skill + /handoff command)",
+        "Any project with files – no service, no database",
+        "Sets up the structure itself if you want"
+      ],
+      "sampleOutput": "# Status — Project X\n> Last updated: 2026-07-30\n\n## Now\n- Landing page is up, form is stuck on DNS.\n\n## Next steps\n1. Check DNS record (with host, open since Tue)\n\n## Blockers\n- Image rights approval missing\n\n→ 6 completed items moved to log.md.",
+      "preview": {
+        "label": "Handoff · Project X",
+        "steps": [
+          "Read session",
+          "log.md",
+          "status.md",
+          "decisions.md"
+        ],
+        "note": "6 completed items moved · status.md: 34 lines · 1 decision awaiting approval."
+      }
+    },
+    "fable-prompter": {
+      "tagline": "Think with Opus, work with Fable: a prompt that lands precisely and saves tokens.",
+      "subheading": "Let Opus 5 build the prompt from your rough idea and send it off in Fable 5 – the heavy computing happens where it belongs.",
+      "bullets": [
+        "Saves tokens and rounds: the idea is spelled out so precisely that Fable doesn’t have to guess or ask",
+        "Uses what Fable 5 does differently – a goal instead of a sequence of steps, initiative within clear limits",
+        "Ready to send: no fill-in fields, no square brackets, no touch-ups",
+        "Sets guardrails where initiative gets expensive – especially in Cowork with real files"
+      ],
+      "note": "Run this skill with Opus 5, not Fable 5. Opus builds the prompt, Fable works through it. The other way round, you let the model that should only be executing do the expensive thinking – and you pay for it in tokens.",
+      "problem": "A vague prompt costs you two things: rounds and tokens. Fable asks back, guesses wrong, you correct it, it computes again. On top of that come the prompt habits of 2024 that actively hurt today – numbered step sequences, approval loops, \"think step by step\". They make the result worse, not better.",
+      "howItWorks": [
+        {
+          "title": "Install",
+          "body": "Download the skill and add it to your AI assistant."
+        },
+        {
+          "title": "Let Opus 5 build the prompt",
+          "body": "Run this skill with Opus 5, not with Fable. Drop in a rough idea, a vague task, a paragraph of context – or an old prompt that doesn’t work any more. Opus thinks the task through and spells it out precisely."
+        },
+        {
+          "title": "Send the prompt in Fable 5",
+          "body": "A single code block, ready to copy – no preamble, no square brackets. The thinking is already done; Fable only executes. That’s how you spend your token budget well."
+        }
+      ],
+      "whyBuilt": "I’ve seen too many prompts that were over-structured out of sheer caution and ran worse because of it. And I’ve watched too often as a strong model first guesses what I actually want. Both cost money. The skill separates the two jobs cleanly: Opus thinks, Fable does.",
+      "builtFor": [
+        "Build with Opus 5 · run in Fable 5",
+        "Chat and Cowork – not for the API",
+        "Replies in the language of your input"
+      ],
+      "sampleOutput": "Before:\n\"Step 1: read my notes. Step 2: wait for\napproval. Step 3: write a draft…\"\n\nAfter:\n\"Turn my notes into a finished newsletter\nissue for freelancers who skim on their phones.\nDone means: ~600 words in my tone, plus 5\nsubject lines, your recommendation first.\"",
+      "preview": {
+        "before": "Step 1: read my notes. Step 2: wait for approval. Step 3: write a draft. Step 4: wait for approval…",
+        "after": "Turn my notes into a finished newsletter issue. Done means: ~600 words in my tone, plus 5 subject lines, your recommendation first."
+      }
+    }
+  }
+}

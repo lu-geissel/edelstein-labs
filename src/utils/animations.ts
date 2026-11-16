@@ -1,4 +1,4 @@
-// Edelstein Labs — hero dot-matrix field, copy buttons, reduced-motion handling.
+// Edelstein Labs — hero dot-matrix field, copy buttons, language cookie, reduced-motion handling.
 const reduced = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 // Dot-matrix field: dots light up along a sweeping slash (the wordmark's "/") and around the pointer.
@@ -60,11 +60,13 @@ function initField() {
 function initCopy() {
   document.querySelectorAll<HTMLElement>('[data-copy]').forEach((btn) => {
     btn.addEventListener('click', () => {
-      const label = btn.querySelector('[data-copy-label]');
+      const label = btn.querySelector<HTMLElement>('[data-copy-label]');
       const done = () => {
         if (!label) return;
-        label.textContent = 'kopiert';
-        setTimeout(() => (label.textContent = 'kopieren'), 1600);
+        // Both labels come from the page (src/i18n/skill.json), so they follow the page language.
+        const idle = label.dataset.idle ?? (label.dataset.idle = label.textContent || '');
+        label.textContent = label.dataset.copied || idle;
+        setTimeout(() => (label.textContent = idle), 1600);
       };
       const fallback = () => {
         const code = btn.querySelector('code');
@@ -90,7 +92,19 @@ function initVideos() {
   document.querySelectorAll('video').forEach((v) => { v.removeAttribute('autoplay'); v.pause(); });
 }
 
+// A manual language choice wins over the browser language (see redirects in vercel.json).
+// Same cookie as edelsteinstrategie.de, shared across both sites via the parent domain.
+function initLanguageSwitch() {
+  document.addEventListener('click', (event) => {
+    const link = event.target instanceof Element ? event.target.closest<HTMLElement>('[data-language-switch]') : null;
+    if (!link) return;
+    const domain = location.hostname.endsWith('edelsteinstrategie.de') ? '; Domain=edelsteinstrategie.de' : '';
+    document.cookie = `lang=${link.dataset.languageSwitch}; Path=/; Max-Age=31536000; SameSite=Lax${domain}`;
+  });
+}
+
 export function initLabs() {
+  initLanguageSwitch();
   const run = () => { initField(); initCopy(); initVideos(); };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
   else run();

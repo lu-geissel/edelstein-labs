@@ -1,0 +1,120 @@
+{
+  "de": {
+    "meta": {
+      "title": "Edelstein Labs · AI-Skills zum Herunterladen",
+      "description": "Selbstgebaute Claude-Skills für Marken- und Content-Arbeit. Kostenlos herunterladen, in claude.ai oder Claude Code installieren, sofort einsatzbereit."
+    },
+    "hero": {
+      "coordsLeft": "Edelstein · Labs",
+      "coordsMiddle": "Signal / Werkbank",
+      "live": "live",
+      "heading": "Arbeit, die Tage frisst. Erledigt in *Minuten.*",
+      "lead": "Die spezialisierten AI-Skills, mit denen ich Marken baue – Strategie, Video-Skripte, Design-Systeme. Kostenlos, in jedem LLM nutzbar, in Minuten startklar.",
+      "primary": "Skills ansehen",
+      "secondary": "Auf GitHub"
+    },
+    "readout": {
+      "label": "Kennzahlen",
+      "title": "Readout",
+      "skills": "Skills",
+      "triggers": "Auslöser",
+      "price": "Preis",
+      "currency": "€",
+      "start": "Start",
+      "minutes": "Min"
+    },
+    "skills": {
+      "heading": "{count} Skills, die ich selbst in *Kundenprojekten* nutze.",
+      "support": "Spezialisiert, ohne Interna, in jedem LLM startklar. Herunterladen, einbinden, loslegen.",
+      "numberWords": ["Null", "Ein", "Zwei", "Drei", "Vier", "Fünf", "Sechs", "Sieben", "Acht", "Neun", "Zehn"]
+    },
+    "why": {
+      "heading": "Diese Skills ersetzen keine Markenarbeit. Sie *verstärken* sie.",
+      "intro": [
+        "Berechtigte Frage: Wenn ich oben schreibe, dass ich damit meine Markenarbeit mache – sparst du dir dann den Strategen? Nein. Und das ist kein Verkaufsspruch.",
+        "AI ist für mich ein Werkzeug wie viele andere. Ich recherchiere damit, automatisiere Prozesse, halte Dinge strukturiert. Es nimmt mir Fleißarbeit ab – nicht das Denken."
+      ],
+      "skillTitle": "Was die Skills übernehmen",
+      "skillTag": "Rauschen",
+      "skill": ["Recherche beschleunigen", "Prozesse automatisieren", "Struktur, Formate, Wiederholbares", "Erste Entwürfe, schnell"],
+      "humanTitle": "Was bei mir bleibt",
+      "humanTag": "Signal",
+      "human": [
+        "Zusammenhänge wirklich verstehen",
+        "Tief bohren, bis es wehtut",
+        "Mit Menschen reden – auch mit den Kunden meiner Kunden",
+        "Verbindungen herstellen, die keiner sieht",
+        "Kreative Inspiration"
+      ],
+      "outro": [
+        "Dieser Kern lässt sich nicht herunterladen. Er kommt aus meiner Art zu denken, zu fragen, zuzuhören. Genau deshalb teile ich die Skills ohne Bauchschmerzen: Wer gut in Branding ist, nutzt sie, um sich selbst zu verstärken. Wer einfach rumprobieren will, auch.",
+        "Wie bei jedem Werkzeug gilt: Wer nicht weiß, was er tut, kommt auch mit dem besten nicht weit. Bei AI ist das kein bisschen anders."
+      ]
+    },
+    "cta": {
+      "heading": "Steckt deine Marke an einer Stelle fest, die kein Skill löst?",
+      "text": "Genau da fange ich an. Lass uns 15 Minuten reden – unverbindlich und ehrlich. Wenn ich nicht der Richtige bin, sage ich dir das.",
+      "button": "Lass uns reden",
+      "note": "15 Min · unverbindlich · kein Pitch"
+    }
+  },
+  "en": {
+    "meta": {
+      "title": "Edelstein Labs · AI skills to download",
+      "description": "Claude skills I built myself for brand and content work. Download them for free, install them in claude.ai or Claude Code, ready to use straight away."
+    },
+    "hero": {
+      "coordsLeft": "Edelstein · Labs",
+      "coordsMiddle": "Signal / Workbench",
+      "live": "live",
+      "heading": "Work that eats days. Done in *minutes.*",
+      "lead": "The specialised AI skills I use to build brands – strategy, video scripts, design systems. Free, usable in any LLM, ready in minutes.",
+      "primary": "See the skills",
+      "secondary": "On GitHub"
+    },
+    "readout": {
+      "label": "Key figures",
+      "title": "Readout",
+      "skills": "Skills",
+      "triggers": "Triggers",
+      "price": "Price",
+      "currency": "€",
+      "start": "Setup",
+      "minutes": "min"
+    },
+    "skills": {
+      "heading": "{count} skills I use in my own *client projects*.",
+      "support": "Specialised, no client internals, ready in any LLM. Download, plug in, get going.",
+      "numberWords": ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten"]
+    },
+    "why": {
+      "heading": "These skills *strengthen* brand work – they don’t replace it.",
+      "intro": [
+        "Fair question: if I say up there that I do my brand work with these – can you skip the strategist? No. And that’s not a sales line.",
+        "For me, AI is one tool among many. I research with it, automate processes, keep things structured. It takes the legwork off my hands – not the thinking."
+      ],
+      "skillTitle": "What the skills take over",
+      "skillTag": "Noise",
+      "skill": ["Speeding up research", "Automating processes", "Structure, formats, anything repeatable", "First drafts, fast"],
+      "humanTitle": "What stays with me",
+      "humanTag": "Signal",
+      "human": [
+        "Really understanding how things connect",
+        "Digging deep until it hurts",
+        "Talking to people – including my clients’ customers",
+        "Making connections nobody else sees",
+        "Creative inspiration"
+      ],
+      "outro": [
+        "That core can’t be downloaded. It comes from the way I think, ask and listen. Which is exactly why I share the skills without a knot in my stomach: if you’re good at branding, they make you stronger. If you just want to play around, go ahead.",
+        "As with any tool: if you don’t know what you’re doing, even the best one won’t get you far. AI is no different."
+      ]
+    },
+    "cta": {
+      "heading": "Is your brand stuck somewhere no skill can fix?",
+      "text": "That’s exactly where I start. Let’s talk for 15 minutes – no strings attached, and honestly. If I’m not the right person, I’ll tell you.",
+      "button": "Let’s talk",
+      "note": "15 min · no obligation · no pitch"
+    }
+  }
+}

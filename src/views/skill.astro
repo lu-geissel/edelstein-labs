@@ -1,0 +1,175 @@
+---
+/* Skill detail page, rendered by src/pages/[slug].astro (German) and src/pages/en/[slug].astro (English). */
+import LabsLayout from '../layouts/LabsLayout.astro';
+import SkillPreview from '../components/SkillPreview.astro';
+import ClaudeBadge from '../components/ClaudeBadge.astro';
+import { getSkills, GITHUB_REPO_URL, MARKETPLACE } from '../data/skills';
+import type { SkillPreview as Preview } from '../data/skills';
+import { texts, rich, fill, localizeHref } from '../i18n';
+
+interface Props { slug: string; }
+const locale = Astro.currentLocale;
+const skill = getSkills(locale).find((s) => s.slug === Astro.props.slug)!;
+const t = texts('skill', locale);
+const repoSlug = GITHUB_REPO_URL.replace('https://github.com/', '');
+
+const meta = {
+  title: fill(t.meta.title, { name: skill.name }),
+  description: fill(t.meta.description, { subheading: skill.subheading }),
+  path: `/${skill.slug}`,
+};
+
+const cmdMarketplace = `/plugin marketplace add ${repoSlug}`;
+const cmdInstall = `/plugin install ${skill.slug}@${MARKETPLACE}`;
+/* The file name can differ from the slug (one plugin can bundle several skills). */
+const skillFiles = [skill.downloadUrl, ...(skill.extraDownloads ?? []).map((d) => d.url)]
+  .map((url) => url.split('/').pop());
+const cmdUnzip =
+  skillFiles.length === 1
+    ? `unzip ${skillFiles[0]} -d ~/.claude/skills/`
+    : `for f in ${skillFiles.join(' ')}; do unzip "$f" -d ~/.claude/skills/; done`;
+
+/* Panel head of the preview: what the snapshot shows, and its state. */
+function previewHead(p: Preview): [string, string] {
+  const l = t.preview;
+  switch (p.kind) {
+    case 'brand-profile': return [l.brandProfile, l.extracted];
+    case 'script-scene': return [p.scene, p.timecode];
+    case 'strategy': return [l.strategyGuide, l.done];
+    case 'voice-profile': return [l.voiceFile, fill(l.samples, { count: p.samples })];
+    case 'pipeline': return [p.label, l.running];
+    case 'prompt': return [l.prompt, l.optimised];
+    case 'deck': return [p.cover, l.draft];
+  }
+}
+const [headLeft, headRight] = previewHead(skill.preview);
+
+/* Strategy steps as a wired node chain; the second node ("Positioning") is active. */
+const graph = (() => {
+  if (skill.preview.kind !== 'strategy') return null;
+  const steps = skill.preview.steps;
+  const W = 560, bw = 96, n = steps.length;
+  const gapX = n > 1 ? (W - 40 - bw) / (n - 1) : 0;
+  const nodes = steps.map((s, i) => ({ s, x: 20 + i * gapX, y: i % 2 ? 84 : 30, on: i === 1 }));
+  const wires = nodes.slice(1).map((b, i) => {
+    const a = nodes[i];
+    return `M${a.x + bw} ${a.y + 18} C ${a.x + bw + 30} ${a.y + 18}, ${b.x - 30} ${b.y + 18}, ${b.x} ${b.y + 18}`;
+  });
+  return { nodes, wires, bw, label: steps.join(', ') };
+})();
+
+const term = [
+  { cmd: cmdMarketplace },
+  { cmd: cmdInstall },
+];
+const backHref = localizeHref('/', locale);
+---
+<LabsLayout {...meta}>
+  <div class="wrap">
+    <div class="crumbs mono">
+      <a href={backHref}>{t.nav.back}</a>
+      <span class="d-meta">
+        <ClaudeBadge />
+        <span class="tagbox"><span class="led"></span>~/skills/{skill.slug}{skill.status !== 'stable' && ` · ${t.card.beta}`}</span>
+      </span>
+    </div>
+  </div>
+
+  <section class="wrap d-hero">
+    <div>
+      <h1>{skill.name}</h1>
+      <p class="d-sub">{skill.subheading}</p>
+      <ul class="bul">{skill.bullets.map((b) => <li>{b}</li>)}</ul>
+      {skill.note && (
+        <div class="d-note"><p class="mono">{t.actions.note}</p><p>{skill.note}</p></div>
+      )}
+      <div class="btns">
+        <a class="btn btn--o" href={skill.downloadUrl} download>{t.actions.download} <span aria-hidden="true">↓</span></a>
+        <a class="btn btn--line" href={skill.githubUrl} target="_blank" rel="noopener noreferrer">{t.actions.github} <span aria-hidden="true">↗</span></a>
+      </div>
+      {skill.extraDownloads && skill.extraDownloads.length > 0 && (
+        <p class="d-extra">
+          {t.actions.extra}
+          {skill.extraDownloads.map((d) => <a href={d.url} download>{d.label} ↓</a>)}
+        </p>
+      )}
+    </div>
+    <div class="graph">
+      <div class="graph-head mono"><span>{headLeft}</span><span><span class="led"></span> {headRight}</span></div>
+      {graph && (
+        <svg viewBox="0 0 560 150" role="img" aria-label={fill(t.preview.graphLabel, { steps: graph.label })}>
+          {graph.wires.map((d, i) => <path class="wire" id={`w${i}`} d={d} />)}
+          {graph.wires.map((_, i) => (
+            <circle class="pulse" r="3">
+              <animateMotion dur="2.4s" begin={`${i * 0.48}s`} repeatCount="indefinite"><mpath href={`#w${i}`} /></animateMotion>
+            </circle>
+          ))}
+          {graph.nodes.map((nd) => (
+            <g class={nd.on ? 'node on' : 'node'}>
+              <rect x={nd.x} y={nd.y} width={graph.bw} height="36" />
+              <text x={nd.x + graph.bw / 2} y={nd.y + 22} text-anchor="middle">{nd.s}</text>
+            </g>
+          ))}
+        </svg>
+      )}
+      <div class="graph-body"><SkillPreview skill={skill} /></div>
+    </div>
+  </section>
+
+  <section class="d-sec">
+    <div class="wrap d-split"><p class="mono">{t.sections.problem}</p><p class="d-big">{skill.problem}</p></div>
+  </section>
+
+  <section class="d-sec">
+    <div class="wrap d-split">
+      <p class="mono">{t.sections.how}</p>
+      <ol class="track">
+        {skill.howItWorks.map((st, i) => (
+          <li>
+            <span class="n mono">{fill(t.sections.step, { n: i + 1 })}</span>
+            <h3>{st.title}</h3>
+            <p>{st.body}</p>
+            {i === 0 && (
+              <div class="console">
+                <div class="console-head mono"><span>{t.install.title}</span><span>{t.install.platforms}</span></div>
+                <div class="console-body">
+                  <div>
+                    <span class="mono">{t.install.claudeAi}</span>
+                    <p set:html={rich(t.install.claudeAiText)} />
+                  </div>
+                  <div>
+                    <span class="mono">{t.install.claudeCode}</span>
+                    <p>{t.install.marketplace}</p>
+                    {term.map((tm) => (
+                      <button type="button" class="term" data-copy={tm.cmd}><code>{tm.cmd}</code><span data-copy-label data-copied={t.install.copied}>{t.install.copy}</span></button>
+                    ))}
+                    <p style="margin-top:16px">{t.install.manual}</p>
+                    <button type="button" class="term" data-copy={cmdUnzip}><code>{cmdUnzip}</code><span data-copy-label data-copied={t.install.copied}>{t.install.copy}</span></button>
+                  </div>
+                </div>
+                <p class="noclaude" set:html={rich(t.install.noClaude)} />
+              </div>
+            )}
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="d-sec">
+    <div class="wrap d-split">
+      <p class="mono">{t.sections.sample}</p>
+      <pre class="sample">{skill.sampleOutput.split('\n').map((l) => <span>{l || ' '}</span>)}</pre>
+    </div>
+  </section>
+
+  <section class="d-sec quoteband">
+    <div class="wrap d-split"><p class="mono">{t.sections.why}</p><p class="d-big">{skill.whyBuilt}</p></div>
+  </section>
+
+  <section class="d-sec">
+    <div class="wrap d-split"><p class="mono">{t.sections.builtFor}</p><div class="chips">{skill.builtFor.map((b) => <span>{b}</span>)}</div></div>
+  </section>
+
+  <div class="wrap"><div class="crumbs mono" style="border:0"><a href={backHref}>{t.nav.back}</a></div></div>
+</LabsLayout>

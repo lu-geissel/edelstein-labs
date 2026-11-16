@@ -1,5 +1,6 @@
 ---
 import fs from 'node:fs';
+import { texts } from '../i18n';
 
 /**
  * "Works with Claude" — referenzieller Hinweis, kein Absender.
@@ -17,8 +18,9 @@ import fs from 'node:fs';
  */
 const logoPath = new URL('../../public/brand/claude-logo.svg', import.meta.url);
 const logoSvg = fs.existsSync(logoPath) ? fs.readFileSync(logoPath, 'utf-8') : null;
+const t = texts('common', Astro.currentLocale).badge;
 ---
-<span class="claude-badge" title="Diese Skills laufen in Claude – ohne Verbindung zu Anthropic.">
+<span class="claude-badge" title={t.title}>
   {logoSvg && <span class="glyph" aria-hidden="true" set:html={logoSvg} />}
-  <span class="mono">Works with Claude</span>
+  <span class="mono">{t.text}</span>
 </span>

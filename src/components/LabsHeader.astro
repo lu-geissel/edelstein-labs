@@ -1,16 +1,22 @@
 ---
-import { MAIN_SITE, GITHUB_REPO_URL } from '../data/skills';
+import { GITHUB_REPO_URL } from '../data/skills';
+import { texts, localizeHref } from '../i18n';
+import LanguageSwitch from './LanguageSwitch.astro';
+const locale = Astro.currentLocale;
+const common = texts('common', locale);
+const t = common.header;
 ---
 <header class="hdr">
   <div class="wrap">
-    <a class="lockup" href="/" aria-label="Edelstein Labs – Startseite">
-      <img src="/brand/edelstein-wordmark.svg" alt="Edelstein" width="60" height="33" />
-      <span class="mono">Labs</span>
+    <a class="lockup" href={localizeHref('/', locale)} aria-label={t.logoHome}>
+      <img src="/brand/edelstein-wordmark.svg" alt={t.logoAlt} width="60" height="33" />
+      <span class="mono">{t.badge}</span>
     </a>
-    <nav class="nav mono" aria-label="Hauptnavigation">
-      <a class="hide-s" href="/#skills">Skills</a>
-      <a class="hide-s" href={GITHUB_REPO_URL} target="_blank" rel="noopener noreferrer">GitHub</a>
-      <a class="ext" href={MAIN_SITE}>Edelstein ↗</a>
+    <nav class="nav mono" aria-label={t.main}>
+      <a class="hide-s" href={localizeHref('/#skills', locale)}>{t.skills}</a>
+      <a class="hide-s" href={GITHUB_REPO_URL} target="_blank" rel="noopener noreferrer">{t.github}</a>
+      <LanguageSwitch />
+      <a class="ext" href={common.site.mainSiteUrl}>{t.mainSite}</a>
     </nav>
   </div>
 </header>

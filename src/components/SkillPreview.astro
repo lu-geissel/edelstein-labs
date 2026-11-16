@@ -2,9 +2,11 @@
 /* Snapshot of what the skill produces, shown in the detail hero. The panel head
    (label + state) is rendered by the page; strategy steps are drawn as the node graph. */
 import type { Skill } from '../data/skills';
+import { texts, fill } from '../i18n';
 interface Props { skill: Skill; }
 const { skill } = Astro.props;
 const p = skill.preview;
+const t = texts('skill', Astro.currentLocale).preview;
 ---
 <div class="pv">
   {p.kind === 'brand-profile' && (
@@ -15,34 +17,34 @@ const p = skill.preview;
         ))}
       </div>
       <dl class="pv-rows">
-        <div><dt class="pv-label">Headline</dt><dd class="pv-serif">{p.fonts.headline}</dd></div>
-        <div><dt class="pv-label">Body</dt><dd>{p.fonts.body}</dd></div>
+        <div><dt class="pv-label">{t.headline}</dt><dd class="pv-serif">{p.fonts.headline}</dd></div>
+        <div><dt class="pv-label">{t.body}</dt><dd>{p.fonts.body}</dd></div>
       </dl>
-      <div class="pv-chips">{p.tones.map((t) => <span>{t}</span>)}</div>
+      <div class="pv-chips">{p.tones.map((tone) => <span>{tone}</span>)}</div>
     </Fragment>
   )}
 
   {p.kind === 'script-scene' && (
     <Fragment>
-      <div><span class="pv-label">Sprechertext</span><p class="pv-serif pv-big">{p.voiceover}</p></div>
-      <div><span class="pv-label">Animation</span><p class="pv-small">{p.animation}</p></div>
-      <div class="pv-meter"><span><i style="width:34%"></i></span><span class="pv-label">{p.words} Wörter</span></div>
+      <div><span class="pv-label">{t.voiceover}</span><p class="pv-serif pv-big">{p.voiceover}</p></div>
+      <div><span class="pv-label">{t.animation}</span><p class="pv-small">{p.animation}</p></div>
+      <div class="pv-meter"><span><i style="width:34%"></i></span><span class="pv-label">{fill(t.words, { count: p.words })}</span></div>
     </Fragment>
   )}
 
   {p.kind === 'strategy' && (
     <Fragment>
-      <div><span class="pv-label">Substance</span><p class="pv-serif pv-big">{p.substance}</p></div>
-      <div class="pv-rule"><span class="pv-label pv-accent">Positioning</span><p class="pv-small">{p.positioning}</p></div>
+      <div><span class="pv-label">{t.substance}</span><p class="pv-serif pv-big">{p.substance}</p></div>
+      <div class="pv-rule"><span class="pv-label pv-accent">{t.positioning}</span><p class="pv-small">{p.positioning}</p></div>
     </Fragment>
   )}
 
   {p.kind === 'voice-profile' && (
     <Fragment>
-      <div><span class="pv-label">Voice DNA</span><p class="pv-serif pv-big">{p.dna}</p></div>
+      <div><span class="pv-label">{t.dna}</span><p class="pv-serif pv-big">{p.dna}</p></div>
       <div class="pv-cols">
-        <div><span class="pv-label pv-accent">Nutzt</span><ul class="pv-words">{p.uses.map((w) => <li>{w}</li>)}</ul></div>
-        <div><span class="pv-label">Vermeidet</span><ul class="pv-words pv-words--off">{p.avoids.map((w) => <li><s>{w}</s></li>)}</ul></div>
+        <div><span class="pv-label pv-accent">{t.uses}</span><ul class="pv-words">{p.uses.map((w) => <li>{w}</li>)}</ul></div>
+        <div><span class="pv-label">{t.avoids}</span><ul class="pv-words pv-words--off">{p.avoids.map((w) => <li><s>{w}</s></li>)}</ul></div>
       </div>
     </Fragment>
   )}
@@ -51,7 +53,7 @@ const p = skill.preview;
     <Fragment>
       <ol class="pv-pipe">
         {p.steps.map((s) => (
-          <li class={`is-${s.state}`}><i></i><span>{s.name}</span><em>{s.state === 'gate' ? 'wartet' : s.state === 'done' ? 'ok' : ''}</em></li>
+          <li class={`is-${s.state}`}><i></i><span>{s.name}</span><em>{s.state === 'gate' ? t.waiting : s.state === 'done' ? t.ok : ''}</em></li>
         ))}
       </ol>
       <p class="pv-small pv-rule">{p.note}</p>
@@ -60,8 +62,8 @@ const p = skill.preview;
 
   {p.kind === 'prompt' && (
     <Fragment>
-      <div><span class="pv-label">Vorher</span><p class="pv-mono pv-off">{p.before}</p></div>
-      <div><span class="pv-label pv-accent">Nachher</span><p class="pv-small pv-on">{p.after}</p></div>
+      <div><span class="pv-label">{t.before}</span><p class="pv-mono pv-off">{p.before}</p></div>
+      <div><span class="pv-label pv-accent">{t.after}</span><p class="pv-small pv-on">{p.after}</p></div>
     </Fragment>
   )}
 
@@ -70,7 +72,7 @@ const p = skill.preview;
       <div class="pv-slides">
         {p.slides.map((s) => <div><strong class="pv-serif">{s.title}</strong><span class="pv-small">{s.body}</span></div>)}
       </div>
-      <div class="pv-rule"><span class="pv-label pv-accent">Offene Frage</span><p class="pv-small">{p.open}</p></div>
+      <div class="pv-rule"><span class="pv-label pv-accent">{t.openQuestion}</span><p class="pv-small">{p.open}</p></div>
     </Fragment>
   )}
 </div>
